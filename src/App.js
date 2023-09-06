@@ -1,20 +1,27 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import News from "./routes/news";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">WallStreet</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Main</Nav.Link>
+            <Nav.Link href="/news">Page1</Nav.Link>
+            <Nav.Link href="#pricing">Page2</Nav.Link>
+            <Nav.Link href="#pricing">Page3</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
+      <Routes>
+        <Route path="/news" element={<News></News>}></Route>
+      </Routes>
     </div>
   );
 }
