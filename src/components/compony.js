@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import test_logo from './test_logo.jpg';
 
 const ComponyBlock = styled.div`
   padding-top: 48px;
@@ -8,6 +9,10 @@ const ComponyBlock = styled.div`
   padding-bottom: 24px;
   border-bottom: 1px solid black;
 
+  img{
+    weight: 100px;
+    height: 100px;
+  }
   h1 {
     margin: 0;
     font-size: 36px;
@@ -39,6 +44,7 @@ const ComponyBlock = styled.div`
 function Componyinfo() {
   return (
     <ComponyBlock>
+      <img src={test_logo} alt='test logo' />
       <h1>삼성생명032830</h1>
       <div className="content">1957년에 설립되어 업계 최대의 전속 설계사 조직과 계리 전문인력을 보유하고 있는 삼성그룹 계열의 생명보험사.
 
