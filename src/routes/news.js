@@ -1,10 +1,17 @@
-import BoxTemplate from "./box";
+import BoxTemplate from "../components/box";
+import NewsHead from "../components/newsHead";
+import Componyinfo from "../components/compony";
 
 function News() {
   return (
     <div style={{display: 'flex'}}>
-      {<BoxTemplate>뉴스페이지</BoxTemplate>}
-      {<BoxTemplate>정보페이지</BoxTemplate>}
+      {<BoxTemplate> 
+        <NewsHead /> 
+        <NewsHead/>
+        </BoxTemplate>}
+      {<BoxTemplate>
+        <Componyinfo />
+        </BoxTemplate>}
     </div>
   );
 }
