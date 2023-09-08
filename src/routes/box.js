@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const BoxBlock =styled.div`
-    width: 900px;
+    width: 700px;
     height: 768px;
 
     position: relative;
@@ -11,7 +11,7 @@ const BoxBlock =styled.div`
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
     margin: 0 auto;
-    margin-top: 96px;
+    margin-top: 30px;
     margin-bottom: 32px;
     display: flex;
     flex-direction: column;
