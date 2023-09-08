@@ -1,7 +1,10 @@
+import BoxTemplate from "./box";
+
 function News() {
   return (
-    <div>
-      <h1>뉴스 페이지입니다.</h1>
+    <div style={{display: 'flex'}}>
+      {<BoxTemplate>뉴스페이지</BoxTemplate>}
+      {<BoxTemplate>정보페이지</BoxTemplate>}
     </div>
   );
 }
