@@ -10,7 +10,7 @@ const ComponyBlock = styled.div`
   border-bottom: 1px solid black;
 
   img {
-    width: 100px;
+      width: 150px;
     height: 100px;
   }
   h1 {
