@@ -2,10 +2,9 @@ import ReactWordcloud from "react-wordcloud";
 import { useNavigate } from "react-router-dom";
 
 function MyWordcloud(props) {
-  const size = [600, 400];
+  const size = [1100, 600];
   const navi = useNavigate();
   const words = props.words;
-  console.log(words);
   const callbacks = {
     getWordColor: (word) => (word.value > 10 ? "red" : "blue"),
     onWordClick: (word) => navi(word.url),
@@ -14,7 +13,7 @@ function MyWordcloud(props) {
   const options = {
     rotations: 1,
     rotationAngles: [0, 0],
-    fontSizes: [5, 100],
+    fontSizes: [30, 150],
     enableTooltip: false,
     fontFamily: "GangwonEduPowerExtraBoldA",
   };
