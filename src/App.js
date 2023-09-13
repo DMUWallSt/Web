@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">WallStreet</Navbar.Brand>
           <Nav className="me-auto">
