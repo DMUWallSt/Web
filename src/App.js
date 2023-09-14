@@ -50,7 +50,7 @@ function App() {
     }
   `;
   const [companyName, setCompanyName] = useState([
-    { text: "삼성생명", value: 1, url: "/" },
+    { text: "AAAAAA", value: 1, url: "/" },
     { text: "삼성생명2", value: 3, url: "/" },
     { text: "삼성생명3", value: 5, url: "/" },
     { text: "삼성생명4", value: 7, url: "/" },

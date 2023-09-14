@@ -38,9 +38,17 @@
 }
 
 @font-face {
-  font-family: "GangwonEduPowerExtraBoldA";
+  font-family: "Gangwon";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
     format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TTTogether";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff")
+    format("woff");
+  font-weight: normal;
   font-style: normal;
 }

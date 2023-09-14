@@ -12,10 +12,10 @@ function MyWordcloud(props) {
   };
   const options = {
     rotations: 1,
+    fontFamily: "TTTogether",
     rotationAngles: [0, 0],
     fontSizes: [30, 150],
     enableTooltip: false,
-    fontFamily: "GangwonEduPowerExtraBoldA",
   };
 
   return (
