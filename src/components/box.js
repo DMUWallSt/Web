@@ -9,13 +9,10 @@ const BoxBlock = styled.div`
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-right: 40px;
-  margin-left: 40px;
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
 function BoxTemplate({ children }) {

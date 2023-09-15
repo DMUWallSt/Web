@@ -3,11 +3,8 @@ import styled from "styled-components";
 import test_logo from "./test_logo.jpg";
 
 const ComponyBlock = styled.div`
-  padding-top: 48px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid black;
+  margin: 20px;
+  //border-bottom: 1px solid black;
 
   img {
       width: 150px;
