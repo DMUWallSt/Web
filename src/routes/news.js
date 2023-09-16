@@ -4,7 +4,6 @@ import BoxTemplate from "../components/box";
 import NewsHead from "../components/newsHead";
 import Componyinfo from "../components/compony";
 
-
 function News() {
   return (
     <div class="main">
