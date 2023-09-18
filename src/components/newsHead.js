@@ -31,7 +31,7 @@ const NewsHeadBlock = styled.div`
   .info {
     display: flex;
     flex-direction: row;
-    justify-content: ;
+    justify-content: space-between;
 `;
 
 
