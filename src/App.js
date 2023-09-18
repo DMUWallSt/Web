@@ -8,6 +8,9 @@ import MyWordcloud from "./reactwordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import styled from "styled-components";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+
 function App() {
   const SearchContainer = styled.div`
     display: flex;
@@ -48,23 +51,22 @@ function App() {
       background-color: #0056b3;
     }
   `;
-  const [companyName, setCompanyName] = useState([
-    { text: "AAAAAA", value: 1, url: "/" },
-    { text: "삼성생명2", value: 3, url: "/" },
-    { text: "삼성생명3", value: 5, url: "/" },
-    { text: "삼성생명4", value: 7, url: "/" },
-    { text: "삼성생명5", value: 9, url: "/" },
-    { text: "삼성생명6", value: 11, url: "/" },
-    { text: "삼성생명7", value: 13, url: "/" },
-    { text: "삼성생명8", value: 15, url: "/" },
-    { text: "삼성생명9", value: 17, url: "/" },
-    { text: "삼성생명10", value: 19, url: "/news" },
-  ]);
 
-  const sortedCompanyName = [...companyName].sort((a, b) => {
-    return a.score - b.score;
+  let { data: companyData } = useQuery(["key1"], () => {
+    return axios.get("/dummy/TestCompanies.json").then((res) => {
+      return res.data;
+    });
   });
 
+  const companyName = companyData?.map((n) => {
+    return n;
+  });
+  console.log(companyName);
+
+  if (!companyName) {
+    return null;
+  }
+  console.log(companyName);
   return (
     <div>
       <Navbar bg="primary" data-bs-theme="dark">
@@ -95,7 +97,7 @@ function App() {
             </div>
           }
         ></Route>
-        <Route path="/news/:id" element={<News />}></Route>
+        <Route path="/news" element={<News />}></Route>
       </Routes>
     </div>
   );

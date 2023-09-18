@@ -3,16 +3,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import RecentlyVisitedCompanies from "./components/RecentlyViewedCompanies";
 import { useState, useEffect } from "react";
+
 function MyWordcloud(props) {
   const WordCloudDiv = styled.div`
     display: flex;
     justify-content: center;
   `;
-  const [visitedCompanies, setVisitedCompanies] = useState([]);
-
-  const addVisitedCompany = (company) => {
-    setVisitedCompanies((prevCompanies) => [...prevCompanies, company]);
-  };
 
   const size = [1100, 500];
   const navi = useNavigate();
