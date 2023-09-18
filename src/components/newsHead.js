@@ -28,7 +28,12 @@ const NewsHeadBlock = styled.div`
     display: flex;
     flex-direction: column;
   }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: ;
 `;
+
 
 function NewsHead() {
   return (
@@ -38,15 +43,12 @@ function NewsHead() {
         <h1>삼성생명, 新상담시스템 도입 정확성 높여</h1>
         <p>
           t is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
+          readable content of a page when looking at its layout. The point of...
         </p>
+        <div className="info">
+          <p>매일경제</p>
+          <p>2023.09.12</p>
+        </div>
       </div>
     </NewsHeadBlock>
   );
