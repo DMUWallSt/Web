@@ -3,6 +3,7 @@ import React from "react";
 import BoxTemplate from "../components/box";
 import NewsHead from "../components/newsHead";
 import Componyinfo from "../components/compony";
+import { useParams } from "react-router-dom";
 
 function News() {
   return (

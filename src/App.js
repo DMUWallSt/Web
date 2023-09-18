@@ -3,12 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import News from "./routes/news";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MyWordcloud from "./reactwordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import styled from "styled-components";
-
 function App() {
   const SearchContainer = styled.div`
     display: flex;
@@ -91,11 +90,12 @@ function App() {
                   <SearchButton>검색</SearchButton>
                 </SearchBox>
               </SearchContainer>
+
               <MyWordcloud words={companyName} />
             </div>
           }
         ></Route>
-        <Route path="/news" element={<News />}></Route>
+        <Route path="/news/:id" element={<News />}></Route>
       </Routes>
     </div>
   );
