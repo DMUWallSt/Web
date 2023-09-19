@@ -58,6 +58,16 @@ function App() {
     });
   });
 
+  let recentlyViewed = JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
+  useEffect(() => {
+    const recentlyViewedData = sessionStorage.getItem("recentlyViewed");
+
+    if (!recentlyViewedData) {
+      sessionStorage.setItem("recentlyViewed", JSON.stringify([]));
+    }
+  }, []);
+
+  console.log(recentlyViewed);
   return (
     <div>
       <Navbar bg="primary" data-bs-theme="dark">
