@@ -52,22 +52,19 @@ function App() {
     }
   `;
 
-  let { data: companyData } = useQuery(["key1"], () => { 
+  let { data: companyData } = useQuery(["key1"], () => {  //주기적으로 데이터 받아와서 표시(데이터 바뀌어도)
     return axios.get("/dummy/TestCompanies.json").then((res) => {
       return res.data;
     });
   });
 
-  let recentlyViewed = JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
-  useEffect(() => {
+  useEffect(() => { //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
     const recentlyViewedData = sessionStorage.getItem("recentlyViewed");
-
     if (!recentlyViewedData) {
       sessionStorage.setItem("recentlyViewed", JSON.stringify([]));
     }
   }, []);
 
-  console.log(recentlyViewed);
   return (
     <div>
       <Navbar bg="primary" data-bs-theme="dark">

@@ -9,12 +9,12 @@ function News(props) {
   const { id } = useParams();
 
   const recentlyViewed = JSON.parse(sessionStorage.getItem('recentlyViewed')) || [];
+  //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
 
-// Check if the 'id' is not in the 'recentlyViewed' array
-if (!recentlyViewed.includes(props.companyData[id].text)) {
-  recentlyViewed.push(props.companyData[id].text);
-  sessionStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
-}
+  if (!recentlyViewed.includes(props.companyData[id].text)) { //중복 체크 로직
+    recentlyViewed.push(props.companyData[id].text);
+    sessionStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
+  }
 
   return (
     <div class="main">
