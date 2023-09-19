@@ -3,60 +3,66 @@
     "id": 0,
     "text": "삼성",
     "value": 7,
-    "url": "/news"
+    "url": "/news/0"
   },
   {
     "id": 1,
     "text": "카카오",
     "value": 9,
-    "url": "/news"
+    "url": "/news/1"
   },
   {
     "id": 2,
     "text": "LG",
     "value": 3,
-    "url": "/news"
+    "url": "/news/2"
   },
   {
     "id": 3,
     "text": "SK",
     "value": 11,
-    "url": "/news"
+    "url": "/news/3"
   },
   {
     "id": 4,
     "text": "롯데",
     "value": 13,
-    "url": "/news"
+    "url": "/news/4"
   },
   {
     "id": 5,
     "text": "농협",
     "value": 15,
-    "url": "/news"
+    "url": "/news/5"
   },
   {
     "id": 6,
     "text": "신세계",
     "value": 1,
-    "url": "/news"
+    "url": "/news/6"
   },
   {
     "id": 7,
     "text": "현대자동차",
     "value": 17,
-    "url": "/news"
+    "url": "/news/7"
   },
   {
     "id": 8,
     "text": "포스코",
     "value": 19,
-    "url": "/news"
+    "url": "/news/8"
   },
   {
     "id": 9,
     "text": "한화",
     "value": 21,
-    "url": "/news"
+    "url": "/news/9"
+  },
+  {
+    "id": 10,
+    "text": "한화2",
+    "value": 1,
+    "url": "/news/10"
   }
 ]

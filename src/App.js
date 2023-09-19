@@ -52,21 +52,12 @@ function App() {
     }
   `;
 
-  let { data: companyData } = useQuery(["key1"], () => {
+  let { data: companyData } = useQuery(["key1"], () => { 
     return axios.get("/dummy/TestCompanies.json").then((res) => {
       return res.data;
     });
   });
 
-  const companyName = companyData?.map((n) => {
-    return n;
-  });
-  console.log(companyName);
-
-  if (!companyName) {
-    return null;
-  }
-  console.log(companyName);
   return (
     <div>
       <Navbar bg="primary" data-bs-theme="dark">
@@ -92,12 +83,12 @@ function App() {
                   <SearchButton>검색</SearchButton>
                 </SearchBox>
               </SearchContainer>
-
-              <MyWordcloud words={companyName} />
+              {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
+              {companyData && <MyWordcloud words={companyData} />}
             </div>
           }
         ></Route>
-        <Route path="/news" element={<News />}></Route>
+        <Route path="/news/:id" element={<News companyData={companyData}/>}></Route>
       </Routes>
     </div>
   );

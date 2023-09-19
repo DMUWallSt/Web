@@ -2,7 +2,6 @@ import ReactWordcloud from "react-wordcloud";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import RecentlyVisitedCompanies from "./components/RecentlyViewedCompanies";
-import { useState, useEffect } from "react";
 
 function MyWordcloud(props) {
   const WordCloudDiv = styled.div`
