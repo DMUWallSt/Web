@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import test_photo from "./test_photo.jpg";
+import Modal from "./modal";
 
 const NewsHeadBlock = styled.div`
   margin: 20px;
@@ -45,6 +46,7 @@ function NewsHead() {
           t is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of...
         </p>
+        <Modal />
         <div className="info">
           <p>매일경제</p>
           <p>2023.09.12</p>
