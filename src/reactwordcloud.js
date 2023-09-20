@@ -41,7 +41,7 @@ function MyWordcloud(props) {
           marginLeft: "300px",
         }}
       />
-      <RecentlyVisitedCompanies />
+      <RecentlyVisitedCompanies companyData={props.words}/>
     </WordCloudDiv>
   );
 }
