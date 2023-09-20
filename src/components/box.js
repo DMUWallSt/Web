@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const BoxBlock = styled.div`
   width: 900px;
 
@@ -13,6 +14,7 @@ const BoxBlock = styled.div`
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
+  font-family: "Gyeonggi-Batang";
 `;
 
 function BoxTemplate({ children }) {
