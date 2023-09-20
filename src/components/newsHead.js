@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from 'react';
 import styled from "styled-components";
 import test_photo from "./test_photo.jpg";
+import ModalComponent from './modal';
 
 const NewsHeadBlock = styled.div`
   margin: 20px;
@@ -36,11 +37,27 @@ const NewsHeadBlock = styled.div`
 
 
 function NewsHead() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <NewsHeadBlock>
       <img src={test_photo} alt="test photo" />
       <div className="content">
-        <h1>삼성생명, 新상담시스템 도입 정확성 높여</h1>
+        <h1 onClick={openModal}>삼성생명, 新상담시스템 도입 정확성 높여</h1>
+        <ModalComponent
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          title="모달 타이틀"
+          content="모달 내용을 입력하세요."
+        />
         <p>
           t is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of...
