@@ -36,12 +36,11 @@ function MyWordcloud(props) {
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "flex-start",
+
           height: "70vh",
-          marginLeft: "300px",
         }}
       />
-      <RecentlyVisitedCompanies companyData={props.words}/>
+      <RecentlyVisitedCompanies companyData={props.words} />
     </WordCloudDiv>
   );
 }

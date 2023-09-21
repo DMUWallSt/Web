@@ -55,12 +55,13 @@
 
 @font-face {
   font-family: "Gyeonggi-Title";
-  src: url('./font/Gyeonggi_font/Title_Bold.woff')
-    format("woff");
+  src: url("./font/Gyeonggi_font/Title_Bold.woff") format("woff");
 }
 
 @font-face {
   font-family: "Gyeonggi-Batang";
-  src: url('./font/Gyeonggi_font/Batang_Regular.woff')
-    format("woff");
+  src: url("./font/Gyeonggi_font/Batang_Regular.woff") format("woff");
+}
+
+@media screen {
 }
