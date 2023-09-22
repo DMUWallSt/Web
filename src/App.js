@@ -11,8 +11,9 @@ import styled from "styled-components";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-//TODO: 반응형 적용
-//TODO: 반응형 적용
+//TODO: 반응형 적용 : 노트북에서 확인하기
+//TODO: 탬 메뉴 적용
+//TODO: 뉴스 정렬
 function App() {
   const SearchContainer = styled.div`
     display: flex;
@@ -42,7 +43,8 @@ function App() {
 
   const SearchButton = styled.button`
     padding: 10px;
-    background-color: #007bff;
+    background-color: black;
+    //#007bff;
     color: #fff;
     font-size: 18px;
     border: none;
@@ -71,14 +73,11 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">WallStreet</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Main</Nav.Link>
-            <Nav.Link href="/news">Page1</Nav.Link>
-            <Nav.Link href="#pricing">Page2</Nav.Link>
-            <Nav.Link href="#pricing">Page3</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

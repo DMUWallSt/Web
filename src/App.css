@@ -54,14 +54,19 @@
 }
 
 @font-face {
-  font-family: "Gyeonggi-Title";
-  src: url("./font/Gyeonggi_font/Title_Bold.woff") format("woff");
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
 }
 
 @font-face {
-  font-family: "Gyeonggi-Batang";
-  src: url("./font/Gyeonggi_font/Batang_Regular.woff") format("woff");
+  font-family: "KBO";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff")
+    format("woff");
 }
 
-@media screen {
+@font-face {
+  font-family: "Noto";
+  src: url("./fonts/Noto_Sans_KR/AnyConv.com__NotoSansKR-ExtraBold.woff")
+    format("woff");
 }

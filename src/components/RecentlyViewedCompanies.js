@@ -8,11 +8,12 @@ const RecentlyVisitedCompanies = (props) => {
   const companyData = props.companyData;
   const navi = useNavigate();
   const RecentlyViewedCompaniesDiv = styled.div`
-    background-color: rgb(13, 110, 253);
+    background-color: black;
+    //rgb(13, 110, 253);
     width: 150px;
     color: white;
     text-align: center;
-    font-family: "TTTogether";
+    font-family: "Noto";
     font-weight: 100;
     border-radius: 20px;
     margin-left: 20px;
@@ -27,7 +28,7 @@ const RecentlyVisitedCompanies = (props) => {
 
   return (
     <RecentlyViewedCompaniesDiv>
-      <h5 style={{ marginTop: "10px" }}>최근 방문 목록</h5>
+      <h5 style={{ marginTop: "10px" }}>최근 방문 기업</h5>
       {JSON.parse(sessionStorage.getItem("recentlyViewed")).map((n, i) => {
         return (
           <RecentlyElementDiv

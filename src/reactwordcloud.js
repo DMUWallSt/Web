@@ -19,7 +19,7 @@ function MyWordcloud(props) {
   };
   const options = {
     rotations: 1,
-    fontFamily: "TTTogether",
+    fontFamily: "Noto",
     rotationAngles: [0, 0],
     fontSizes: [30, 150],
     enableTooltip: false,
