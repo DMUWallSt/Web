@@ -1,0 +1,62 @@
+[
+  {
+    "id": 10,
+    "text": "삼성2",
+    "value": 7,
+    "url": "/news/10"
+  },
+  {
+    "id": 11,
+    "text": "카카오2",
+    "value": 9,
+    "url": "/news/11"
+  },
+  {
+    "id": 12,
+    "text": "LG2",
+    "value": 3,
+    "url": "/news/12"
+  },
+  {
+    "id": 13,
+    "text": "SK2",
+    "value": 11,
+    "url": "/news/13"
+  },
+  {
+    "id": 14,
+    "text": "롯데2",
+    "value": 13,
+    "url": "/news/14"
+  },
+  {
+    "id": 15,
+    "text": "농협2",
+    "value": 15,
+    "url": "/news/15"
+  },
+  {
+    "id": 16,
+    "text": "신세계2",
+    "value": 1,
+    "url": "/news/16"
+  },
+  {
+    "id": 17,
+    "text": "현대자동차2",
+    "value": 17,
+    "url": "/news/17"
+  },
+  {
+    "id": 18,
+    "text": "포스코2",
+    "value": 19,
+    "url": "/news/18"
+  },
+  {
+    "id": 19,
+    "text": "한화2",
+    "value": 21,
+    "url": "/news/19"
+  }
+]

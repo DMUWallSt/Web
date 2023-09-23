@@ -1,0 +1,62 @@
+[
+  {
+    "id": 30,
+    "text": "삼성4",
+    "value": 7,
+    "url": "/news/30"
+  },
+  {
+    "id": 31,
+    "text": "카카오4",
+    "value": 9,
+    "url": "/news/31"
+  },
+  {
+    "id": 32,
+    "text": "LG4",
+    "value": 3,
+    "url": "/news/32"
+  },
+  {
+    "id": 33,
+    "text": "SK4",
+    "value": 11,
+    "url": "/news/33"
+  },
+  {
+    "id": 34,
+    "text": "롯데4",
+    "value": 13,
+    "url": "/news/34"
+  },
+  {
+    "id": 35,
+    "text": "농협4",
+    "value": 15,
+    "url": "/news/35"
+  },
+  {
+    "id": 36,
+    "text": "신세계4",
+    "value": 1,
+    "url": "/news/36"
+  },
+  {
+    "id": 37,
+    "text": "현대자동차4",
+    "value": 17,
+    "url": "/news/37"
+  },
+  {
+    "id": 38,
+    "text": "포스코4",
+    "value": 19,
+    "url": "/news/38"
+  },
+  {
+    "id": 39,
+    "text": "한화4",
+    "value": 21,
+    "url": "/news/39"
+  }
+]

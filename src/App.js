@@ -36,32 +36,48 @@ function App() {
     flex: 1;
     padding: 10px;
     font-size: 18px;
-    border: none;
+    border: 3px solid rgb(13, 110, 253); /* 테두리를 검정색 2px 두께로 설정 */
     border-radius: 5px;
     margin-right: 10px; /* 검색 입력란과 버튼 사이 간격 */
   `;
 
   const SearchButton = styled.button`
     padding: 10px;
-    background-color: black;
+    background-color: #007bff;
     //#007bff;
     color: #fff;
     font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "NOTO";
 
     &:hover {
       background-color: #0056b3;
     }
   `;
 
-  let { data: companyData } = useQuery(["key1"], () => {
-    //주기적으로 데이터 받아와서 표시(데이터 바뀌어도)
-    return axios.get("/dummy/TestCompanies.json").then((res) => {
-      return res.data;
-    });
-  });
+  const [tabState, setTabState] = useState("economy");
+
+  console.log(tabState);
+
+  const { data: companyData, refetch } = useQuery(
+    ["key1"],
+    () => {
+      return axios.get(`/dummy/${tabState}.json`).then((res) => {
+        return res.data;
+      });
+    },
+    {
+      cacheTime: 0,
+      staleTime: 0,
+      onSuccess: () => {
+        refetch();
+      },
+    }
+  );
+
+  console.log(companyData);
 
   useEffect(() => {
     //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
@@ -73,7 +89,7 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">WallStreet</Navbar.Brand>
           <Nav className="me-auto">
@@ -81,7 +97,6 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
       <Routes>
         <Route
           path="/"
@@ -94,7 +109,9 @@ function App() {
                 </SearchBox>
               </SearchContainer>
               {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
-              {companyData && <MyWordcloud words={companyData} />}
+              {companyData && (
+                <MyWordcloud words={companyData} setTabState={setTabState} />
+              )}
             </div>
           }
         ></Route>

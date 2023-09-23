@@ -1,0 +1,62 @@
+[
+  {
+    "id": 20,
+    "text": "삼성3",
+    "value": 7,
+    "url": "/news/20"
+  },
+  {
+    "id": 21,
+    "text": "카카오3",
+    "value": 9,
+    "url": "/news/21"
+  },
+  {
+    "id": 22,
+    "text": "LG3",
+    "value": 3,
+    "url": "/news/22"
+  },
+  {
+    "id": 23,
+    "text": "SK3",
+    "value": 11,
+    "url": "/news/23"
+  },
+  {
+    "id": 24,
+    "text": "롯데3",
+    "value": 13,
+    "url": "/news/24"
+  },
+  {
+    "id": 25,
+    "text": "농협3",
+    "value": 15,
+    "url": "/news/25"
+  },
+  {
+    "id": 26,
+    "text": "신세계3",
+    "value": 1,
+    "url": "/news/26"
+  },
+  {
+    "id": 27,
+    "text": "현대자동차3",
+    "value": 17,
+    "url": "/news/27"
+  },
+  {
+    "id": 28,
+    "text": "포스코3",
+    "value": 19,
+    "url": "/news/28"
+  },
+  {
+    "id": 29,
+    "text": "한화3",
+    "value": 21,
+    "url": "/news/29"
+  }
+]

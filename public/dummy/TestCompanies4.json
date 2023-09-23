@@ -1,0 +1,62 @@
+[
+  {
+    "id": 40,
+    "text": "삼성6",
+    "value": 7,
+    "url": "/news/40"
+  },
+  {
+    "id": 41,
+    "text": "카카오6",
+    "value": 9,
+    "url": "/news/41"
+  },
+  {
+    "id": 42,
+    "text": "LG6",
+    "value": 3,
+    "url": "/news/42"
+  },
+  {
+    "id": 43,
+    "text": "SK6",
+    "value": 11,
+    "url": "/news/43"
+  },
+  {
+    "id": 44,
+    "text": "롯데6",
+    "value": 13,
+    "url": "/news/44"
+  },
+  {
+    "id": 45,
+    "text": "농협6",
+    "value": 15,
+    "url": "/news/45"
+  },
+  {
+    "id": 46,
+    "text": "신세계6",
+    "value": 1,
+    "url": "/news/46"
+  },
+  {
+    "id": 47,
+    "text": "현대자동차6",
+    "value": 17,
+    "url": "/news/47"
+  },
+  {
+    "id": 48,
+    "text": "포스코6",
+    "value": 19,
+    "url": "/news/48"
+  },
+  {
+    "id": 49,
+    "text": "한화6",
+    "value": 21,
+    "url": "/news/49"
+  }
+]

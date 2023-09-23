@@ -2,8 +2,10 @@ import ReactWordcloud from "react-wordcloud";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import RecentlyVisitedCompanies from "./components/RecentlyViewedCompanies";
+import TabLayout from "./components/tabLayout";
 
 function MyWordcloud(props) {
+  console.log(props);
   const WordCloudDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -27,6 +29,7 @@ function MyWordcloud(props) {
 
   return (
     <WordCloudDiv>
+      <TabLayout setTabState={props.setTabState} refetch={props.refetch} />
       <ReactWordcloud
         callbacks={callbacks}
         options={options}
@@ -36,7 +39,6 @@ function MyWordcloud(props) {
         style={{
           display: "flex",
           justifyContent: "center",
-
           height: "70vh",
         }}
       />
