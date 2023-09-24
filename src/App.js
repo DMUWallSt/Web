@@ -59,8 +59,10 @@ function App() {
 
   const [tabState, setTabState] = useState("economy");
 
-  console.log(tabState);
-
+  //1. 워드클라우드에서 데이터를 받아 표시해주는 형태
+  //2. 데이터를 useQuery로 실시간 업데이트 중
+  //3. ~~~~/ecomony 이렇게 되어 있으면 탭마다 고유의 값을 주고, 해당 탭을 클릭하면 props 로 전송된 setTab 함수를 실행시켜서  App.js 의 tab state를 변경시킴
+  //4. 그럼 useQuery([key], fetch(~~~/${tab}).then()~~ 이게 변경되면서 다른 워드클라우드가 나오게 된다.
   const { data: companyData, refetch } = useQuery(
     ["key1"],
     () => {
@@ -69,15 +71,16 @@ function App() {
       });
     },
     {
-      cacheTime: 0,
-      staleTime: 0,
       onSuccess: () => {
-        refetch();
+        console.log("aa");
+        //refetch();
       },
     }
   );
 
-  console.log(companyData);
+  useEffect(() => {
+    refetch();
+  }, [tabState]);
 
   useEffect(() => {
     //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용

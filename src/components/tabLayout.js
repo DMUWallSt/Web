@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 function TabLayout(props) {
-  console.log(props);
   const TabMenuDiv = styled.div`
     background-color: rgb(13, 110, 253);
     //rgb(13, 110, 253); 파랑
@@ -17,6 +16,14 @@ function TabLayout(props) {
     padding: 10px;
   `;
 
+  const TabElementDiv = styled.div`
+    cursor: pointer;
+    margin-top: 10px;
+    &:hover {
+      color: lightblue;
+    }
+  `;
+
   const testArr = ["economy", "politics", "test", "탭4", "탭5"];
 
   return (
@@ -24,14 +31,14 @@ function TabLayout(props) {
       <h5 style={{ marginTop: "10px" }}>탭 메뉴</h5>
       {testArr.map((n) => {
         return (
-          <div
+          <TabElementDiv
             key={n}
             onClick={() => {
               props.setTabState(n);
             }}
           >
             {n}
-          </div>
+          </TabElementDiv>
         );
       })}
     </TabMenuDiv>
