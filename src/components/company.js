@@ -3,10 +3,11 @@ import styled from "styled-components";
 import test_logo from "./test_logo.png";
 import chart from "./chart_dummy.png"
 
-const ComponyBlock = styled.div`
+const CompanyBlock = styled.div`
   margin: 30px;
   display: flex;
   flex-direction: column;
+  font-family: "Noto";
 
   .title{
     display: flex;
@@ -16,12 +17,14 @@ const ComponyBlock = styled.div`
   .stockinfo {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    //justify-content: space-around;
   }
   .score {
     display: flex;
     flex-direction: column;
-    //border-right: 1px solid black;
+    padding-right: 150px;
+    border-right: 1px solid black;
+    margin-bottom: 20px;
   }
   .stock {
     display: flex;
@@ -40,9 +43,11 @@ const ComponyBlock = styled.div`
     font-size: 36px;
     color: #343a40;
     text-align: center;
+    font-weight: bold;
   }
   .title #stockid {
     margin-left: 10px;
+    margin-top: 10%;
 
   }
   .content {
@@ -57,12 +62,17 @@ const ComponyBlock = styled.div`
     margin: 0 auto;
     margin-bottom: 10px;
   }
+  .stockinfo .stock {
+    text-align: center;
+    justify-content: center;
+    padding-left: 150px;
+  }
   
 `;
 
-function Componyinfo() {
+function Companyinfo() {
   return (
-    <ComponyBlock>
+    <CompanyBlock>
       <img src={test_logo} alt="test logo" />
       <div className="title">
         <h1 id="stockname">삼성전자</h1>
@@ -89,8 +99,8 @@ function Componyinfo() {
         </div>
       </div>
       <img id="chart" src={chart} alt="chart"/>
-    </ComponyBlock>
+    </CompanyBlock>
   );
 }
 
-export default Componyinfo;
+export default Companyinfo;

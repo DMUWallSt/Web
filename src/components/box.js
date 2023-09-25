@@ -14,7 +14,6 @@ const BoxBlock = styled.div`
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: "Gyeonggi-Batang";
 `;
 
 function BoxTemplate({ children }) {

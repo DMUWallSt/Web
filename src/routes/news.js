@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import BoxTemplate from "../components/box";
 import NewsHead from "../components/newsHead";
-import Componyinfo from "../components/compony";
+import Companyinfo from "../components/company";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -49,7 +49,7 @@ function News(props) {
           })}
       </BoxTemplate>
       <BoxTemplate>
-        <Componyinfo />
+        <Companyinfo />
       </BoxTemplate>
     </div>
   );
