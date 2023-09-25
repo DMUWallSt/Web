@@ -11,7 +11,11 @@ function NewsHead(props) {
     img {
       width: 150px;
       height: 100px;
-      object-fit: fill;
+      object-fit: cover;
+      background-color: #000; /* 검은 배경색 추가 */
+      display: flex;
+      justify-content: center; /* 가운데 정렬 */
+      align-items: center;
     }
     h1 {
       margin-left: 20px;
@@ -57,6 +61,7 @@ function NewsHead(props) {
       <div className="content">
         <h1 onClick={openModal}>{props.newsData.title}</h1>
         <ModalComponent
+          img={props.newsData.thumbnail_link}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           title={props.newsData.title}

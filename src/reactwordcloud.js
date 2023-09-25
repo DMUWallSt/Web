@@ -15,7 +15,7 @@ function MyWordcloud(props) {
   const navi = useNavigate();
   const words = props.words;
   const callbacks = {
-    getWordColor: (word) => (word.value > 10 ? "red" : "blue"),
+    getWordColor: (word) => (word.value < 17 ? "red" : "blue"),
     onWordClick: (word) => navi(word.url),
     getWordTooltip: (word) => `${word.value}`,
   };

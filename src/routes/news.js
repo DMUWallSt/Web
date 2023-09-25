@@ -24,7 +24,9 @@ function News(props) {
     // 데이터를 비동기로 가져옵니다.
     async function fetchNewsData() {
       try {
-        const response = await axios.get("http://localhost:3000/dummy/lg.json");
+        const response = await axios.get(
+          "http://localhost:3000/dummy/samsung.json"
+        );
         //나중에 api 개발 된 뒤, App.js 의 companyData 에서 기업 이름을 가져와서 변수화 한 후 넣으면 될듯.
         console.log(response.data);
         setNewsData(response.data);

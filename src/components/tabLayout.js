@@ -24,7 +24,7 @@ function TabLayout(props) {
     }
   `;
 
-  const testArr = ["economy", "politics", "test", "탭4", "탭5"];
+  const testArr = ["economy", "politics"];
 
   return (
     <TabMenuDiv>
