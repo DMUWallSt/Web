@@ -11,11 +11,7 @@ function NewsHead(props) {
     img {
       width: 150px;
       height: 100px;
-      object-fit: cover;
-      background-color: #000; /* 검은 배경색 추가 */
-      display: flex;
-      justify-content: center; /* 가운데 정렬 */
-      align-items: center;
+      object-fit: contain; /* 이미지가 비율을 유지하며 컨테이너에 맞게 축소됩니다. */
     }
     h1 {
       margin-left: 20px;
@@ -44,7 +40,13 @@ function NewsHead(props) {
       justify-content: space-between;
     }
   `;
-
+  const ImgDiv = styled.div`
+    width: 150px;
+    height: 100px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+  `;
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -57,7 +59,9 @@ function NewsHead(props) {
 
   return (
     <NewsHeadBlock>
-      <img src={props.newsData.thumbnail_link} />
+      <ImgDiv>
+        <img src={props.newsData.thumbnail_link} />
+      </ImgDiv>
       <div className="content">
         <h1 onClick={openModal}>{props.newsData.title}</h1>
         <ModalComponent

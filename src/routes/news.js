@@ -6,17 +6,18 @@ import NewsHead from "../components/newsHead";
 import Companyinfo from "../components/company";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import styled from "styled-components";
 
 function News(props) {
   const { id } = useParams();
 
-  const PaginationBox = styled.div` //페이지네이션을 포함한 박스
-  display : flex;
-  flex-direction: column;
-  `
+  const PaginationBox = styled.div`
+    //페이지네이션을 포함한 박스
+    display: flex;
+    flex-direction: column;
+  `;
   //const recentlyViewed =
   //JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
   //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
@@ -51,25 +52,36 @@ function News(props) {
   return (
     <div className="main">
       <PaginationBox>
-      {/*props.companyData[id].url*/}
-      <BoxTemplate>
-        {newsData &&
-          newsData.map((n) => {
-            return <NewsHead key={n.toString()} newsData={n} id={n.id} />;
-          })}
-      </BoxTemplate>
-      <div style={{display : "flex" ,justifyContent:"center", marginTop : "10px"}}>
-      <Stack spacing={5}>
-        <Pagination count={5} color="primary" showFirstButton showLastButton/>
-        {/*page: 현재 페이지
+        {/*props.companyData[id].url*/}
+        <BoxTemplate>
+          {newsData &&
+            newsData.map((n) => {
+              return <NewsHead key={n.toString()} newsData={n} id={n.id} />;
+            })}
+        </BoxTemplate>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}
+        >
+          <Stack spacing={5}>
+            <Pagination
+              count={5}
+              color="primary"
+              showFirstButton
+              showLastButton
+            />
+            {/*page: 현재 페이지
 count: 총 페이지 개수
 onChange: 페이지네이션에서 왼쪽, 오른쪽 화살표나 다른 페이지를 눌렀을 때 발생하는 함수
 sx: 스타일을 정의
 size: 전체적인 크기를 설정
 renderItem: 페이지네이션 안을 직접 설정하고자 할 때 사용
 https://flykimjiwon.tistory.com/112 */}
-      </Stack>
-      </div>
+          </Stack>
+        </div>
       </PaginationBox>
       <BoxTemplate>
         <Companyinfo />
