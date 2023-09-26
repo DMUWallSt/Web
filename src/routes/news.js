@@ -59,8 +59,15 @@ function News(props) {
           })}
       </BoxTemplate>
       <div style={{display : "flex" ,justifyContent:"center"}}>
-      <Stack spacing={2}>
+      <Stack spacing={5}>
         <Pagination count={5} color="primary"/>
+        {/*page: 현재 페이지
+count: 총 페이지 개수
+onChange: 페이지네이션에서 왼쪽, 오른쪽 화살표나 다른 페이지를 눌렀을 때 발생하는 함수
+sx: 스타일을 정의
+size: 전체적인 크기를 설정
+renderItem: 페이지네이션 안을 직접 설정하고자 할 때 사용
+https://flykimjiwon.tistory.com/112 */}
       </Stack>
       </div>
       </PaginationBox>
