@@ -58,9 +58,9 @@ function News(props) {
             return <NewsHead key={n.toString()} newsData={n} id={n.id} />;
           })}
       </BoxTemplate>
-      <div style={{display : "flex" ,justifyContent:"center"}}>
+      <div style={{display : "flex" ,justifyContent:"center", marginTop : "10px"}}>
       <Stack spacing={5}>
-        <Pagination count={5} color="primary"/>
+        <Pagination count={5} color="primary" showFirstButton showLastButton/>
         {/*page: 현재 페이지
 count: 총 페이지 개수
 onChange: 페이지네이션에서 왼쪽, 오른쪽 화살표나 다른 페이지를 눌렀을 때 발생하는 함수

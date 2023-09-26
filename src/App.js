@@ -94,7 +94,7 @@ function App() {
     <div>
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">WallStreet</Navbar.Brand>
+          <Navbar.Brand href="/">WallSt</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Main</Nav.Link>
           </Nav>
