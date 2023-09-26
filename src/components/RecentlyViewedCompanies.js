@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 const RecentlyVisitedCompanies = (props) => {
   //TODO: 테두리만 검정,테두리 그림자 설정, 배경 흰색, 글자색 검정

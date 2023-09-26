@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import "./modal.css";
-import test_photo from "./test_photo.jpg";
 
 Modal.setAppElement("#root"); // 모달이 화면에 렌더링될 DOM 요소를 설정
 

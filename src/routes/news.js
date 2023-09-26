@@ -6,10 +6,17 @@ import NewsHead from "../components/newsHead";
 import Companyinfo from "../components/company";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import styled from "styled-components";
 
 function News(props) {
   const { id } = useParams();
 
+  const PaginationBox = styled.div` //페이지네이션을 포함한 박스
+  display : flex;
+  flex-direction: column;
+  `
   //const recentlyViewed =
   //JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
   //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
@@ -43,6 +50,7 @@ function News(props) {
 
   return (
     <div className="main">
+      <PaginationBox>
       {/*props.companyData[id].url*/}
       <BoxTemplate>
         {newsData &&
@@ -50,6 +58,12 @@ function News(props) {
             return <NewsHead key={n.toString()} newsData={n} id={n.id} />;
           })}
       </BoxTemplate>
+      <div style={{display : "flex" ,justifyContent:"center"}}>
+      <Stack spacing={2}>
+        <Pagination count={5} color="primary"/>
+      </Stack>
+      </div>
+      </PaginationBox>
       <BoxTemplate>
         <Companyinfo />
       </BoxTemplate>
