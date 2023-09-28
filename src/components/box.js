@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const BoxBlock = styled.div`
-  width: 900px;
+  width: 47vw;
 
   position: relative;
   background: #edede9;

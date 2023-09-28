@@ -4,8 +4,9 @@ import ModalComponent from "./modal";
 
 function NewsHead(props) {
   const NewsHeadBlock = styled.div`
-    margin: 20px;
+    margin: 10px;
     border-bottom: 1px solid black;
+    padding-bottom: 5px;
     display: flex;
     flex-direction: row;
     img {
