@@ -13,11 +13,18 @@ import styled from "styled-components";
 function News(props) {
   const { id } = useParams();
 
+  const newsPerPage = 5;
+  const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음
+  const currentPageFirst = currentPageLast - newsPerPage; /// 현재 페이지의 끝
+  const currentNewss = array.slice(currentPageFirst, currentPageLast); //배열의 begin 부터 end 까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환
+  const pageNumber = Math.ceil(array.length / newsPerPage); // 총 페이지 수(소수점 올림)
+
   const PaginationBox = styled.div`
     //페이지네이션을 포함한 박스
     display: flex;
     flex-direction: column;
   `;
+
   //const recentlyViewed =
   //JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
   //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
@@ -31,6 +38,7 @@ function News(props) {
   useEffect(() => {
     // 데이터를 비동기로 가져옵니다.
     async function fetchNewsData() {
+      //이걸로 페이지네이션도 할 수 있음
       try {
         const response = await axios.get(
           "http://localhost:3000/dummy/samsung.json"
