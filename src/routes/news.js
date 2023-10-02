@@ -13,27 +13,12 @@ import styled from "styled-components";
 function News(props) {
   const { id } = useParams();
 
-  const newsPerPage = 5;
-  const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음
-  const currentPageFirst = currentPageLast - newsPerPage; /// 현재 페이지의 끝
-  const currentNewss = array.slice(currentPageFirst, currentPageLast); //배열의 begin 부터 end 까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환
-  const pageNumber = Math.ceil(array.length / newsPerPage); // 총 페이지 수(소수점 올림)
-
   const PaginationBox = styled.div`
     //페이지네이션을 포함한 박스
     display: flex;
     flex-direction: column;
   `;
 
-  //const recentlyViewed =
-  //JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
-  //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
-
-  // if (!recentlyViewed.includes(props.companyData[id].text)) {
-  //   //중복 체크 로직. 추후 데이터 받아 와서 저장
-  //   recentlyViewed.unshift(props.companyData[id].text);
-  //   sessionStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewed));
-  // }
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
     // 데이터를 비동기로 가져옵니다.
@@ -53,6 +38,29 @@ function News(props) {
     fetchNewsData(); // 데이터 가져오는 함수 호출
   }, []); // 빈 배열을 넣어 한 번만 호출되도록 설정
 
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
+
+  const handleChange = (e, value) => {
+    console.log(value);
+    setCurrentPage(value);
+  };
+
+  const newsPerPage = 5;
+  const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음
+  const currentPageFirst = currentPageLast - newsPerPage; /// 현재 페이지의 끝
+  const currentNews = newsData.slice(currentPageFirst, currentPageLast); //배열의 begin 부터 end 까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환
+  const pageNumber = Math.ceil(newsData.length / newsPerPage); // 총 페이지 수(소수점 올림)
+
+  //const recentlyViewed =
+  //JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
+  //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
+
+  // if (!recentlyViewed.includes(props.companyData[id].text)) {
+  //   //중복 체크 로직. 추후 데이터 받아 와서 저장
+  //   recentlyViewed.unshift(props.companyData[id].text);
+  //   sessionStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewed));
+  // }
+
   //추후 여기에 useQuery 넣어서 각 기업 정보 페이지 별로 데이터 "하나만" 받아와서 출력되게 함.
   //props로 데이터 넘겨줘서 표시하게 할 것.
   //맨 처음에 XX 관련 페이지입니다. 표시해도 좋을듯.
@@ -62,8 +70,8 @@ function News(props) {
       <PaginationBox>
         {/*props.companyData[id].url*/}
         <BoxTemplate>
-          {newsData &&
-            newsData.map((n) => {
+          {currentNews &&
+            currentNews.map((n) => {
               return <NewsHead key={n.toString()} newsData={n} id={n.id} />;
             })}
         </BoxTemplate>
@@ -73,12 +81,14 @@ function News(props) {
             justifyContent: "center",
           }}
         >
-          <Stack spacing={5}>
+          <Stack spacing={2}>
             <Pagination
-              count={5}
+              count={pageNumber}
+              page={currentPage}
               color="primary"
               showFirstButton
               showLastButton
+              onChange={handleChange}
             />
             {/*page: 현재 페이지
             count: 총 페이지 개수
