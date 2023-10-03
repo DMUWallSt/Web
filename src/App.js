@@ -11,9 +11,6 @@ import styled from "styled-components";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-//TODO: 반응형 적용 : 노트북에서 확인하기
-//TODO: 패이지네이션 완성하기
-//TODO: Box 두개 비율로 크기 맞추기
 function App() {
   const SearchContainer = styled.div`
     display: flex;
@@ -72,7 +69,6 @@ function App() {
     },
     {
       onSuccess: () => {
-        console.log("aa");
         //refetch();
       },
     }
