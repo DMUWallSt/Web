@@ -47,6 +47,7 @@ function NewsHead(props) {
     background-color: #000;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   `;
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -60,9 +61,12 @@ function NewsHead(props) {
 
   return (
     <NewsHeadBlock>
-      <ImgDiv>
-        <img src={props.newsData.thumbnail_link} />
-      </ImgDiv>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <ImgDiv>
+          <img src={props.newsData.thumbnail_link} />
+        </ImgDiv>
+        <h2>ㅁㅇㄴㄹ</h2>
+      </div>
       <div className="content">
         <h1 onClick={openModal}>{props.newsData.title}</h1>
         <ModalComponent
