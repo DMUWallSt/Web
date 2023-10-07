@@ -25,9 +25,10 @@ function News(props) {
     async function fetchNewsData() {
       //이걸로 페이지네이션도 할 수 있음
       try {
-        const response = await axios.get(
-          "http://localhost:3000/dummy/samsung.json"
-        );
+        // const response = await axios.get(
+        //   "http://localhost:3000/dummy/samsung.json"
+        // );
+        const response = await axios.get(`http://localhost:3001/news/${id}`);
         //나중에 api 개발 된 뒤, App.js 의 companyData 에서 기업 이름을 가져와서 변수화 한 후 넣으면 될듯.
         console.log(response.data);
         setNewsData(response.data);
