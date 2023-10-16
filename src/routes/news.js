@@ -57,7 +57,8 @@ function News(props) {
     setLoading(true);
     async function fetchNewsData() {
       try {
-        const response = await axios.get(`http://localhost:3002/news/${id}`);
+        const response = await axios.get(`http://localhost:3001/news/${id}`);
+        //const response = await axios.get(`http://localhost:3001/news/${id}`);
         setDataSuccess(true);
         console.log(response.data);
         setLoading(false);
@@ -149,3 +150,9 @@ function News(props) {
 }
 
 export default News;
+
+/*
+1. 삼성이라는 검색어를 get 요청에 넣어서 API 로 보냄
+2. 해당 API에서 해당 검색어와 일치하는 기업 데이터베이스를 찾고 해당 url로 redirect 시킴
+3. 기업 id 를 구하는 것이 아닌, 기업 이름으로 검색하는 방식도 생각해 봐야 함.(기업 이름 자체가 키가 되는 데이터베이스 필요)
+*/

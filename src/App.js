@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import News from "./routes/news";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MyWordcloud from "./reactwordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
@@ -54,7 +54,12 @@ function App() {
     }
   `;
 
+  const SearchForm = styled.form`
+    display: flex;
+  `;
+
   const [tabState, setTabState] = useState("economy");
+  const searchComp = useRef(null);
 
   //1. 워드클라우드에서 데이터를 받아 표시해주는 형태
   //2. 데이터를 useQuery로 실시간 업데이트 중
@@ -103,8 +108,23 @@ function App() {
             <div>
               <SearchContainer>
                 <SearchBox>
-                  <SearchInput type="text" placeholder="기업명을 입력하세요" />
-                  <SearchButton>검색</SearchButton>
+                  <SearchInput
+                    type="text"
+                    placeholder="기업명을 입력하세요"
+                    ref={searchComp}
+                  />
+                  <SearchForm>
+                    <SearchButton
+                      type="submit"
+                      onClick={() => {
+                        {
+                          console.log(searchComp.current?.value);
+                        }
+                      }}
+                    >
+                      검색
+                    </SearchButton>
+                  </SearchForm>
                 </SearchBox>
               </SearchContainer>
               {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}

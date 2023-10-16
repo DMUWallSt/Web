@@ -24,17 +24,25 @@ function TabLayout(props) {
     }
   `;
 
-  const testArr = ["economy", "politics"];
+  const testArr = [
+    "현재가",
+    "전일비 등락률",
+    "액면가",
+    "시가총액",
+    "상장주식수",
+    "외국인비율",
+    "거래량",
+  ];
 
   return (
     <TabMenuDiv>
       <h5 style={{ marginTop: "10px" }}>탭 메뉴</h5>
-      {testArr.map((n) => {
+      {testArr.map((n, i) => {
         return (
           <TabElementDiv
             key={n}
             onClick={() => {
-              props.setTabState(n);
+              props.setTabState(i);
             }}
           >
             {n}
