@@ -93,7 +93,7 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar data-bs-theme="dark" style={{ backgroundColor: "#f9ce8d" }}>
         <Container>
           <Navbar.Brand href="/">WallSt</Navbar.Brand>
           <Nav className="me-auto">

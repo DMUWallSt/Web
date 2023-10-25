@@ -48,6 +48,7 @@ function News(props) {
   `;
 
   const [newsData, setNewsData] = useState([]);
+  const [corpData, setCorpData] = useState();
   const [dataSuccess, setDataSuccess] = useState(false);
   const [loading, setLoading] = useState(false); // axios에서 정보를 받아오고 랜더링하기 위한 상태 state
   const [error, setError] = useState(null); // 에러발생시 에러를 저장할 수 있는 state
@@ -62,7 +63,8 @@ function News(props) {
         setDataSuccess(true);
         console.log(response.data);
         setLoading(false);
-        setNewsData(response.data);
+        setNewsData(response.data.news);
+        setCorpData(response.data.company);
       } catch (error) {
         setLoading(false);
         setError(error);
@@ -142,7 +144,7 @@ function News(props) {
       </PaginationBox>
       {dataSuccess && (
         <BoxTemplate>
-          <Companyinfo />
+          <Companyinfo companyData={corpData} />
         </BoxTemplate>
       )}
     </div>
