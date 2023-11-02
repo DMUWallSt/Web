@@ -13,9 +13,10 @@ function MyWordcloud(props) {
 
   const size = [1100, 500];
   const navi = useNavigate();
-  const words = props.words;
+  let words = props.words;
+  console.log(words);
   const callbacks = {
-    getWordColor: (word) => (word.value < 17 ? "red" : "blue"),
+    getWordColor: (word) => (word.ratio > 0 ? "red" : "blue"),
     onWordClick: (word) => navi(word.url),
     getWordTooltip: (word) => `${word.value}`,
   };

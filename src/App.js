@@ -78,8 +78,16 @@ function App() {
   const { data: companyData, refetch } = useQuery(
     ["key1"],
     () => {
-      return axios.get(`/dummy/${tabState}.json`).then((res) => {
-        return res.data;
+      return axios.get(`http://localhost:3001/wordCloud`).then((res) => {
+        const Values = [30, 20, 10, 5, 30, 20, 10, 5];
+
+        const wordCloudData = res.data.map((item, index) => ({
+          value: Values[index],
+          text: item.NAME,
+          url: "/news/" + item.NAME,
+          ratio: item.ratio,
+        }));
+        return wordCloudData;
       });
     },
     {
