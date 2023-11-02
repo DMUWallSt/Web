@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import test_logo from "./test_lg.png";
-import chart from "./chart_dummy.png";
 
 const CompanyBlock = styled.div`
   margin: 30px;
@@ -72,9 +70,7 @@ function Companyinfo(props) {
           <h1 id="stockname">{props.companyData[0].name}</h1>
           <p id="stockid">{props.companyData[0].stock_code} | KOSPI</p>
         </div>
-        <div className="content">
-          <p>{props.companyData[0].company_info}</p>
-        </div>
+        <div className="content"></div>
         <div className="stockinfo">
           <div className="score">
             <h1>투자점수</h1>
@@ -85,7 +81,12 @@ function Companyinfo(props) {
           </div>
           <div className="stock">
             <h1 id="stocktoday">{props.companyData[0].stock_today}</h1>
-            <p>전일대비 ▲300 | + 0.29%</p>
+            <p>
+              {props.companyData[0].diff >= 0
+                ? "전일대비 ▲" + props.companyData[0].diff
+                : "전일대비 ▼" + props.companyData[0].diff}{" "}
+              | {props.companyData[0].ratio}
+            </p>
           </div>
         </div>
       </CompanyBlock>

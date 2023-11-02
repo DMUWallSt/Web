@@ -12,6 +12,16 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 function App() {
+  const search = (corpName) => {
+    const data = axios
+      .get(`http://localhost:3001/news/${corpName}`)
+      .then((result) => {
+        console.log(result);
+        return data;
+      })
+      .catch((error) => console.log(error));
+  };
+
   const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -73,9 +83,7 @@ function App() {
       });
     },
     {
-      onSuccess: () => {
-        //refetch();
-      },
+      onSuccess: () => {},
     }
   );
 
@@ -118,7 +126,8 @@ function App() {
                       type="submit"
                       onClick={() => {
                         {
-                          console.log(searchComp.current?.value);
+                          const searchValue = searchComp.current?.value;
+                          console.log(searchValue);
                         }
                       }}
                     >
@@ -135,7 +144,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/news/:id"
+          path="/news/:companyName"
           element={<News companyData={companyData} />}
         ></Route>
       </Routes>

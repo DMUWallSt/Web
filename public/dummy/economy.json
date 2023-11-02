@@ -1,27 +1,27 @@
 [
   {
     "id": 0,
-    "text": "삼성",
+    "text": "삼성전자",
     "value": 7,
-    "url": "/news/0"
+    "url": "/news/삼성전자"
   },
   {
     "id": 1,
     "text": "카카오",
     "value": 9,
-    "url": "/news/1"
+    "url": "/news/카카오"
   },
   {
     "id": 2,
     "text": "LG",
     "value": 3,
-    "url": "/news/2"
+    "url": "/news/LG"
   },
   {
     "id": 3,
-    "text": "SK",
+    "text": "SK하이닉스",
     "value": 11,
-    "url": "/news/3"
+    "url": "/news/SK"
   },
   {
     "id": 4,
