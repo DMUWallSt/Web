@@ -11,7 +11,6 @@ import styled from "styled-components";
 
 function News(props) {
   const { companyName } = useParams();
-  console.log(companyName);
 
   const navi = useNavigate();
 
@@ -19,8 +18,8 @@ function News(props) {
     // 페이지네이션을 포함한 박스
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Optional to make the container full height */
+    align-items: center;
+    height: 100vh;
   `;
 
   const NotFoundBox = styled.div`
@@ -64,6 +63,9 @@ function News(props) {
           `http://localhost:3001/news/${companyName}`
         );
         //const response = await axios.get(`http://localhost:3001/news/${companyName}`);
+        if (response.data.news.length === 0) {
+          throw new Error("에러");
+        }
         setDataSuccess(true);
         console.log(response.data);
         setLoading(false);
@@ -73,7 +75,6 @@ function News(props) {
         setLoading(false);
         setError(error);
         setDataSuccess(false);
-        console.error(error);
       }
     }
   }, []);

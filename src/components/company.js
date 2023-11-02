@@ -86,6 +86,7 @@ function Companyinfo(props) {
                 ? "전일대비 ▲" + props.companyData[0].diff
                 : "전일대비 ▼" + props.companyData[0].diff}{" "}
               | {props.companyData[0].ratio}
+              {"%"}
             </p>
           </div>
         </div>

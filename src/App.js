@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import News from "./routes/news";
 import { useState, useEffect, useRef } from "react";
 import MyWordcloud from "./reactwordcloud";
@@ -12,14 +12,11 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 function App() {
+  const navi = useNavigate();
+
   const search = (corpName) => {
-    const data = axios
-      .get(`http://localhost:3001/news/${corpName}`)
-      .then((result) => {
-        console.log(result);
-        return data;
-      })
-      .catch((error) => console.log(error));
+    console.log(corpName);
+    navi(`/news/${corpName}`);
   };
 
   const SearchContainer = styled.div`
@@ -135,7 +132,7 @@ function App() {
                       onClick={() => {
                         {
                           const searchValue = searchComp.current?.value;
-                          console.log(searchValue);
+                          search(searchValue);
                         }
                       }}
                     >
