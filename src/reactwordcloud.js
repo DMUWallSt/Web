@@ -11,7 +11,7 @@ function MyWordcloud(props) {
     justify-content: center;
   `;
 
-  const size = [1100, 500];
+  const size = [1100, 300];
   const navi = useNavigate();
   let words = props.words;
   console.log(words);
@@ -36,12 +36,11 @@ function MyWordcloud(props) {
         callbacks={callbacks}
         options={options}
         size={size}
-        minSize={[1000, 500]}
+        minSize={[1000, 300]}
         words={words}
         style={{
           display: "flex",
           justifyContent: "center",
-          height: "70vh",
         }}
       />
       {/*<RecentlyVisitedCompanies companyData={props.words} />*/}
