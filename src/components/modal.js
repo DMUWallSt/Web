@@ -8,7 +8,7 @@ function ModalComponent(props) {
   const customStyles = {
     overlay: {
       zIndex: 1000,
-      backgroundColor: "#00000070",
+      backgroundColor: "#00000070"
     },
     content: {
       width: "800px",
