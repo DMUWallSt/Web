@@ -5,10 +5,12 @@ import ModalComponent from "./modal";
 function NewsHead(props) {
   const NewsHeadBlock = styled.div`
     margin: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #FFFFFF;
     padding-bottom: 5px;
     display: flex;
     flex-direction: row;
+    color: #FFFFFF;
+    filter: brightness(0.8);
 
     img {
       width: 150px;
@@ -19,16 +21,16 @@ function NewsHead(props) {
       margin-left: 20px;
       font-weight: bold;
       font-size: 20px;
-      color: #343a40;
+      
     }
     p {
       margin-left: 20px;
       font-size: 16px;
-      color: #343a40;
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
+      
     }
     .content {
       display: flex;
@@ -50,6 +52,7 @@ function NewsHead(props) {
     justify-content: center;
     flex-direction: column;
   `;
+  
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
