@@ -19,6 +19,26 @@ function App() {
     navi(`/news/${corpName}`);
   };
 
+  const BackGround = styled.div`
+    display: flex;
+    justify-content: center;
+    min-width: 100vh;
+    height: 100vh;
+    background-color: #0c1229;
+    margin: 0;
+    font-family: "NOTO";
+    color: white;
+  `;
+
+  const ContentDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+    height: 100vh;
+    //background-color: white;
+  `;
+
   const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -105,55 +125,62 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Navbar data-bs-theme="dark" style={{ backgroundColor: "#f9ce8d" }}>
-        <Container>
-          <Navbar.Brand href="/">WallSt</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/">Main</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <SearchContainer>
-                <SearchBox>
-                  <SearchInput
-                    type="text"
-                    placeholder="기업명을 입력하세요"
-                    ref={searchComp}
-                  />
-                  <SearchForm>
-                    <SearchButton
-                      type="submit"
-                      onClick={() => {
-                        {
-                          const searchValue = searchComp.current?.value;
-                          search(searchValue);
-                        }
-                      }}
-                    >
-                      검색
-                    </SearchButton>
-                  </SearchForm>
-                </SearchBox>
-              </SearchContainer>
-              {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
-              {companyData && (
-                <MyWordcloud words={companyData} setTabState={setTabState} />
-              )}
-            </div>
-          }
-        ></Route>
-        <Route
-          path="/news/:companyName"
-          element={<News companyData={companyData} />}
-        ></Route>
-      </Routes>
-    </div>
+    <BackGround>
+      <ContentDiv
+        style={{
+          backgroundColor: "#0c1229",
+          marginLeft: 0,
+          //marginRight: "auto",
+        }}
+      >
+        <Navbar data-bs-theme="dark">
+          <Container>
+            <Navbar.Brand href="/" style={{ color: "#F35A97" }}>
+              WallSt
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <SearchContainer>
+                  <SearchBox>
+                    <SearchInput
+                      type="text"
+                      placeholder="기업명을 입력하세요"
+                      ref={searchComp}
+                    />
+                    <SearchForm>
+                      <SearchButton
+                        type="submit"
+                        onClick={() => {
+                          {
+                            const searchValue = searchComp.current?.value;
+                            search(searchValue);
+                          }
+                        }}
+                      >
+                        검색
+                      </SearchButton>
+                    </SearchForm>
+                  </SearchBox>
+                </SearchContainer>
+                {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
+                {companyData && (
+                  <MyWordcloud words={companyData} setTabState={setTabState} />
+                )}
+              </div>
+            }
+          ></Route>
+          <Route
+            path="/news/:companyName"
+            element={<News companyData={companyData} />}
+          ></Route>
+        </Routes>
+      </ContentDiv>
+    </BackGround>
   );
 }
 export default App;

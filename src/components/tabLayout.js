@@ -34,6 +34,10 @@ function TabLayout(props) {
     "거래량",
   ];
 
+  //const data = axios.get();
+
+  //SELECT NAME,stock_today,ratio,trading_vol,market_cap FROM company_info ORDER BY ratio DESC LIMIT 8
+
   return (
     <TabMenuDiv>
       <h5 style={{ marginTop: "10px" }}>탭 메뉴</h5>
