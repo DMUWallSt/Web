@@ -62,8 +62,8 @@ function RankingComponent(props) {
           <table key={index} style={{ textAlign: "left", border: "none" }}>
             <tr>
               <td>{n.NAME}</td>
-              <td>{n.market_cap}</td>
-              <td>{n.stock_today} ₩</td>
+              <td>{n.market_cap} 억</td>
+              <td>{n.stock_today} </td>
               <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>
@@ -82,9 +82,8 @@ function RankingComponent(props) {
           <table key={index} style={{ textAlign: "left", border: "none" }}>
             <tr>
               <td>{n.NAME}</td>
-
-              <td>{n.trading_vol}</td>
-              <td>{n.stock_today} 억</td>
+              <td>{n.trading_vol} 개</td>
+              <td>{n.stock_today} ₩</td>
               <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>

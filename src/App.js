@@ -144,6 +144,7 @@ function App() {
   //3. ~~~~/ecomony 이렇게 되어 있으면 탭마다 고유의 값을 주고, 해당 탭을 클릭하면 props 로 전송된 setTab 함수를 실행시켜서  App.js 의 tab state를 변경시킴
   //4. 그럼 useQuery([key], fetch(~~~/${tab}).then()~~ 이게 변경되면서 다른 워드클라우드가 나오게 된다.
 
+  console.log(rankingState);
   useEffect(() => {
     const response = axios
       .get(`http://localhost:3001/${rankingState}`)
@@ -154,7 +155,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [rankingState]);
 
   const { data: companyData, refetch } = useQuery(
     ["key1"],

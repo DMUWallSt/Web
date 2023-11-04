@@ -73,7 +73,7 @@
 
 th,
 td {
-  width: 100px; /* 각 셀의 너비 조절 */
+  width: 120px; /* 각 셀의 너비 조절 */
   height: 40px; /* 각 셀의 높이 조절 */
   text-align: center; /* 텍스트 가운데 정렬 */
 }
