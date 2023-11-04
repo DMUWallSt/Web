@@ -25,7 +25,7 @@ function MyWordcloud(props) {
     rotations: 1,
     fontFamily: "Noto",
     rotationAngles: [0, 0],
-    fontSizes: [15, 50],
+    fontSizes: [20, 100],
     enableTooltip: false,
   };
 

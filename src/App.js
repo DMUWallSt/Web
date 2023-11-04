@@ -84,7 +84,7 @@ function App() {
 
   const SearchLine = styled.div`
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     width: 100%;
     height: 1%;
     background: white;
@@ -115,19 +115,51 @@ function App() {
 
   const RankingHr = styled.div`
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     width: 90%;
     height: 1%;
     background: white;
   `;
 
+  const CircleButton = styled.button`
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background-color: ${(props) => props.backgroundColor};
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+  `;
+  const ButtonContainer = styled.div`
+    display: flex;
+  `;
+
   const [tabState, setTabState] = useState("economy");
+  const [rankingData, setRankingData] = useState();
   const searchComp = useRef(null);
 
   //1. 워드클라우드에서 데이터를 받아 표시해주는 형태
   //2. 데이터를 useQuery로 실시간 업데이트 중
   //3. ~~~~/ecomony 이렇게 되어 있으면 탭마다 고유의 값을 주고, 해당 탭을 클릭하면 props 로 전송된 setTab 함수를 실행시켜서  App.js 의 tab state를 변경시킴
   //4. 그럼 useQuery([key], fetch(~~~/${tab}).then()~~ 이게 변경되면서 다른 워드클라우드가 나오게 된다.
+
+  useEffect(() => {
+    const response = axios
+      .get("http://localhost:3001/ranking")
+      .then((res) => {
+        setRankingData(res.data);
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const { data: companyData, refetch } = useQuery(
     ["key1"],
     () => {
@@ -209,7 +241,7 @@ function App() {
                 </SearchContainer>
                 <SearchLine />
                 {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
-                {companyData && (
+                {companyData && rankingData && (
                   <WordCloudAndRanking>
                     <WordCloudContainer>
                       <MyWordcloud
@@ -218,7 +250,38 @@ function App() {
                       />
                     </WordCloudContainer>
                     <Ranking>
+                      <h2 style={{ marginTop: "3%" }}>등락률 TOP 8</h2>
                       <RankingHr />
+                      {rankingData.map((n) => {
+                        return (
+                          <table
+                            border="1"
+                            style={{ textAlign: "left", border: "none" }}
+                          >
+                            <tr>
+                              <td>{n.NAME}</td>
+                              <td>{n.stock_today} ₩</td>
+                              <td
+                                style={{ color: n.diff < 0 ? "blue" : "red" }}
+                              >
+                                {n.diff < 0 ? "▼ " + n.diff : "▲ " + n.diff}
+                              </td>
+                              <td
+                                style={{ color: n.ratio < 0 ? "blue" : "red" }}
+                              >
+                                {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio}{" "}
+                                %
+                              </td>
+                            </tr>
+                          </table>
+                        );
+                      })}
+                      <ButtonContainer>
+                        <CircleButton backgroundColor="#3498db">1</CircleButton>
+                        <CircleButton backgroundColor="#e74c3c">2</CircleButton>
+                        <CircleButton backgroundColor="#27ae60">3</CircleButton>
+                        <CircleButton backgroundColor="#f1c40f">4</CircleButton>
+                      </ButtonContainer>
                     </Ranking>
                   </WordCloudAndRanking>
                 )}
