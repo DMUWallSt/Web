@@ -21,29 +21,40 @@ function App() {
 
   const BackGround = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    min-width: 100vh;
+    align-items: center;
+    width: 100vw;
     height: 100vh;
     background-color: #0c1229;
     margin: 0;
     font-family: "NOTO";
     color: white;
+    padding: 0;
+  `;
+
+  const HeaderDiv = styled.div`
+    width: 100%;
+    height: 7%;
+    background-color: red;
+    display: flex;
+    margin: 0;
   `;
 
   const ContentDiv = styled.div`
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80vw;
-    height: 100vh;
-    //background-color: white;
+    width: 80%;
+    background-color: green;
   `;
 
   const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 18vh;
+    height: 18%;
     margin: 0;
   `;
 
@@ -126,20 +137,23 @@ function App() {
 
   return (
     <BackGround>
-      <ContentDiv
+      <Navbar
+        data-bs-theme="dark"
         style={{
-          backgroundColor: "#0c1229",
-          marginLeft: 0,
-          //marginRight: "auto",
+          marginTop: "0px",
+          marginLeft: "0px",
+          marginRight: "auto",
+          backgroundColor: "#111834",
+          width: "100%",
         }}
       >
-        <Navbar data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="/" style={{ color: "#F35A97" }}>
-              WallSt
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
+        <Container>
+          <Navbar.Brand href="/" style={{ color: "#F35A97" }}>
+            WallSt
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <ContentDiv>
         <Routes>
           <Route
             path="/"

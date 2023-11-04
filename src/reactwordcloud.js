@@ -30,7 +30,8 @@ function MyWordcloud(props) {
 
   return (
     <WordCloudDiv>
-      <TabLayout setTabState={props.setTabState} refetch={props.refetch} />
+      {/*<TabLayout setTabState={props.setTabState} refetch={props.refetch} />*/}
+
       <ReactWordcloud
         callbacks={callbacks}
         options={options}
@@ -43,7 +44,7 @@ function MyWordcloud(props) {
           height: "70vh",
         }}
       />
-      <RecentlyVisitedCompanies companyData={props.words} />
+      {/*<RecentlyVisitedCompanies companyData={props.words} />*/}
     </WordCloudDiv>
   );
 }
