@@ -9,7 +9,7 @@ const CompanyBlock = styled.div`
   font-family: "Noto";
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid #FFFFFF;
 
   .title {
     display: flex;
@@ -19,6 +19,7 @@ const CompanyBlock = styled.div`
   .stockinfo {
     display: flex;
     flex-direction: row;
+    color: white;
   }
 
   .score {

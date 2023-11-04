@@ -20,8 +20,8 @@ function ModalComponent(props) {
       padding: 0,
       transform: "translateY(-50%)",
       position: "relative",
-      background: "#282c34",
-      fontcolor : "white",
+      background: "#FFFFFF",
+      fontcolor : "black"
     },
   };
   return (
@@ -40,11 +40,12 @@ function ModalComponent(props) {
           <img className="img" src={props.img}></img>
           <p className="news">{props.content}</p>
         </div>
+        <button className="closeBtn" onClick={props.onRequestClose}>
+          <img src={exitbtn}/>
+        </button>
       </div>
       
-      <button className="closeBtn" onClick={props.onRequestClose}>
-          <img src={exitbtn}/>
-      </button>
+      
       
     </Modal>
   );
