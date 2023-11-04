@@ -19,7 +19,6 @@ function News(props) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
   `;
 
   const NotFoundBox = styled.div`
@@ -86,7 +85,7 @@ function News(props) {
     setCurrentPage(value);
   };
 
-  const newsPerPage = 5;
+  const newsPerPage = 3;
   const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음
   const currentPageFirst = currentPageLast - newsPerPage; // 현재 페이지의 끝
   const currentNews = newsData.slice(currentPageFirst, currentPageLast); // 배열의 begin부터 end까지의 얕은 복사본
@@ -117,6 +116,11 @@ function News(props) {
     );
   return (
     <div className="main">
+      {dataSuccess && (
+        <BoxTemplate>
+          <Companyinfo companyData={corpData} />
+        </BoxTemplate>
+      )}
       <PaginationBox>
         {dataSuccess ? (
           <div>
@@ -152,11 +156,6 @@ function News(props) {
           </div>
         ) : null}
       </PaginationBox>
-      {dataSuccess && (
-        <BoxTemplate>
-          <Companyinfo companyData={corpData} />
-        </BoxTemplate>
-      )}
     </div>
   );
 }

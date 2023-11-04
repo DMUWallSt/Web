@@ -9,6 +9,7 @@ function NewsHead(props) {
     padding-bottom: 5px;
     display: flex;
     flex-direction: row;
+
     img {
       width: 150px;
       height: 100px;
@@ -65,7 +66,6 @@ function NewsHead(props) {
         <ImgDiv>
           <img src={props.newsData.thumbnail_link} />
         </ImgDiv>
-        <h2>ㅁㅇㄴㄹ</h2>
       </div>
       <div className="content">
         <h1 onClick={openModal}>{props.newsData.title}</h1>

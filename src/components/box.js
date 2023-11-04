@@ -2,17 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const BoxBlock = styled.div`
-  width: 47vw;
-
   position: relative;
-  background: #edede9;
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+  background-color: rgba(128, 128, 128, 0);
 
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+  
 `;
 
 function BoxTemplate({ children }) {
