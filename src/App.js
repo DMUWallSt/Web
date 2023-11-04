@@ -28,28 +28,30 @@ function App() {
     height: 100vh;
     background-color: #0c1229;
     margin: 0;
+    padding: 0;
     font-family: "NOTO";
     color: white;
-    padding: 0;
   `;
 
   const HeaderDiv = styled.div`
+    height: 6%;
+    background-color: #111834;
     width: 100%;
-    height: 7%;
-    background-color: red;
-    display: flex;
-    margin: 0;
   `;
 
   const ContentDiv = styled.div`
-    height: 100%;
+    height: 94%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 80%;
+    width: 70%;
     background-color: green;
   `;
 
+  const Slogun = styled.div`
+    font-size: 40px;
+    margin-top: 5%;
+    margin-left: 2%;
+  `;
   const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -137,28 +139,25 @@ function App() {
 
   return (
     <BackGround>
-      <Navbar
-        data-bs-theme="dark"
-        style={{
-          marginTop: "0px",
-          marginLeft: "0px",
-          marginRight: "auto",
-          backgroundColor: "#111834",
-          width: "100%",
-        }}
-      >
-        <Container>
-          <Navbar.Brand href="/" style={{ color: "#F35A97" }}>
-            WallSt
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+      <HeaderDiv>
+        <Navbar data-bs-theme="dark">
+          <Container>
+            <Navbar.Brand href="/" style={{ color: "#f35a97" }}>
+              WallSt
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </HeaderDiv>
       <ContentDiv>
         <Routes>
           <Route
             path="/"
             element={
               <div>
+                <Slogun>
+                  <div>스마트하고 빠르게,</div>
+                  <div>종목을 분석하고 찾아보는 Wallst</div>
+                </Slogun>
                 <SearchContainer>
                   <SearchBox>
                     <SearchInput
