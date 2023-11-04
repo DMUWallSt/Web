@@ -10,6 +10,7 @@ import "tippy.js/animations/scale.css";
 import styled from "styled-components";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import searchImg from "./scr_icon.png";
 
 function App() {
   const navi = useNavigate();
@@ -44,58 +45,80 @@ function App() {
     display: flex;
     flex-direction: column;
     width: 70%;
-    background-color: green;
   `;
 
   const Slogun = styled.div`
     font-size: 40px;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 2%;
   `;
   const SearchContainer = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 18%;
-    margin: 0;
+    height: 7%;
+    margin-top: 5%;
+    margin-left: 2%;
   `;
 
-  const SearchBox = styled.div`
-    display: flex;
-    width: 600px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  const SearchImg = styled.div`
+    width: 5%;
+    height: 5%;
   `;
 
   const SearchInput = styled.input`
-    flex: 1;
-    padding: 10px;
+    width: 50%;
     font-size: 18px;
-    border: 3px solid rgb(13, 110, 253); /* 테두리를 검정색 2px 두께로 설정 */
-    border-radius: 5px;
-    margin-right: 10px; /* 검색 입력란과 버튼 사이 간격 */
+    margin-right: 1%;
+    margin-left: 1%; /* 검색 입력란과 버튼 사이 간격 */
+    font-family: normal;
   `;
 
-  const SearchButton = styled.button`
+  const SearchButton = styled.div`
     padding: 10px;
-    background-color: #007bff;
-    //#007bff;
-    color: #fff;
+    background-color: #0c1229;
+    border: 1px white;
+    color: white;
     font-size: 18px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-family: "NOTO";
+  `;
 
-    &:hover {
-      background-color: #0056b3;
-    }
+  const SearchLine = styled.div`
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 1%;
+    background: white;
   `;
 
   const SearchForm = styled.form`
     display: flex;
+  `;
+
+  const WordCloudAndRanking = styled.div`
+    display: flex;
+    min-height: 40%;
+  `;
+
+  const Ranking = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 40%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+  `;
+
+  const WordCloudContainer = styled.div`
+    border-radius: 20px;
+  `;
+
+  const RankingHr = styled.div`
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 90%;
+    height: 1%;
+    background: white;
   `;
 
   const [tabState, setTabState] = useState("economy");
@@ -159,30 +182,45 @@ function App() {
                   <div>종목을 분석하고 찾아보는 Wallst</div>
                 </Slogun>
                 <SearchContainer>
-                  <SearchBox>
-                    <SearchInput
-                      type="text"
-                      placeholder="기업명을 입력하세요"
-                      ref={searchComp}
+                  <SearchImg>
+                    <img
+                      src={searchImg}
+                      style={{ width: "100%", objectFit: "fill" }}
                     />
-                    <SearchForm>
-                      <SearchButton
-                        type="submit"
-                        onClick={() => {
-                          {
-                            const searchValue = searchComp.current?.value;
-                            search(searchValue);
-                          }
-                        }}
-                      >
-                        검색
-                      </SearchButton>
-                    </SearchForm>
-                  </SearchBox>
+                  </SearchImg>
+                  <SearchInput
+                    type="text"
+                    placeholder=" 찾고 싶은 기업 이름을 입력하세요"
+                    ref={searchComp}
+                  />
+                  <SearchForm>
+                    <SearchButton
+                      type="submit"
+                      onClick={() => {
+                        {
+                          const searchValue = searchComp.current?.value;
+                          search(searchValue);
+                        }
+                      }}
+                    >
+                      검색
+                    </SearchButton>
+                  </SearchForm>
                 </SearchContainer>
+                <SearchLine />
                 {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
                 {companyData && (
-                  <MyWordcloud words={companyData} setTabState={setTabState} />
+                  <WordCloudAndRanking>
+                    <WordCloudContainer>
+                      <MyWordcloud
+                        words={companyData}
+                        setTabState={setTabState}
+                      />
+                    </WordCloudContainer>
+                    <Ranking>
+                      <RankingHr />
+                    </Ranking>
+                  </WordCloudAndRanking>
                 )}
               </div>
             }

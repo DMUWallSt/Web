@@ -9,9 +9,10 @@ function MyWordcloud(props) {
   const WordCloudDiv = styled.div`
     display: flex;
     justify-content: center;
+    border-radius: 20px;
   `;
 
-  const size = [1100, 300];
+  const size = [790, 500];
   const navi = useNavigate();
   let words = props.words;
   console.log(words);
@@ -24,7 +25,7 @@ function MyWordcloud(props) {
     rotations: 1,
     fontFamily: "Noto",
     rotationAngles: [0, 0],
-    fontSizes: [30, 150],
+    fontSizes: [15, 50],
     enableTooltip: false,
   };
 
@@ -36,9 +37,10 @@ function MyWordcloud(props) {
         callbacks={callbacks}
         options={options}
         size={size}
-        minSize={[1000, 300]}
+        minSize={[400, 400]}
         words={words}
         style={{
+          backgroundColor: "rgba(0, 0, 0, 0.20)",
           display: "flex",
           justifyContent: "center",
         }}
