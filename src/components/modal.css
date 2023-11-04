@@ -40,17 +40,10 @@
     padding: 10px 40px;
     margin: 10px auto 0;
     margin-bottom: 20px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
     display: block;
-    line-height: 20px;
+    background-size: cover;
 }
 
-.modal-wrapper .closeBtn:hover{
-    background-color: #575757;
-    color: #FFF;
-}
 
 h3{
     color: white;

@@ -18,29 +18,32 @@ function News(props) {
     // 페이지네이션을 포함한 박스
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
   `;
 
   const NotFoundBox = styled.div`
     text-align: center;
-    background-color: #007bff;
+    background-color: #0C1229;
+    margin-top: 40%;
   `;
   const NotFoundBoxH1 = styled.h1`
     margin: 10px;
     color: white;
     font-family: "NOTO";
     padding: 5px;
+    
   `;
 
   const NotFoundBoxH3 = styled.h3`
     margin: 10px;
     color: white;
     font-family: "NOTO";
+    justify-contents: center;
   `;
 
   const GoBackButton = styled.button`
     text-align: center;
-    background-color: #007bff;
+    background-color: #0C1229;
     border-radius: 5px;
     width: 13vw;
     border: none;

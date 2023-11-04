@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import "./modal.css";
 import { colors } from "@mui/material";
+import exitbtn from "./exit.png";
 
 Modal.setAppElement("#root"); // 모달이 화면에 렌더링될 DOM 요소를 설정
 
@@ -38,11 +39,13 @@ function ModalComponent(props) {
         <div className="content">
           <img className="img" src={props.img}></img>
           <p className="news">{props.content}</p>
-          <button className="closeBtn" onClick={props.onRequestClose}>
-            Close
-          </button>
         </div>
       </div>
+      
+      <button className="closeBtn" onClick={props.onRequestClose}>
+          <img src={exitbtn}/>
+      </button>
+      
     </Modal>
   );
 }

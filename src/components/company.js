@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import scorebar from "./scorebar.png";
+import choice from "./choice.png";
 
 const CompanyBlock = styled.div`
   display: flex;
@@ -42,7 +44,7 @@ const CompanyBlock = styled.div`
   }
 
   h1 #stockname {
-    font-size: 36px;
+    font-size: 30px;
     color: #343a40;
     text-align: center;
     font-weight: bold;
@@ -53,7 +55,15 @@ const CompanyBlock = styled.div`
     justify-content: center;
   }
 
-  
+  .scorebar #tri {
+    position: absolute;
+    left: 39.7%; //1번 
+    //left: 45.2%; //2번
+    //left: 50.9%; //3번
+    //left: 56.6%; //4번
+    //left: 62.3%; //5번
+    top: 56px;
+  }
 `;
 
 function Companyinfo(props) {
@@ -61,22 +71,23 @@ function Companyinfo(props) {
     props.companyData && (
       <CompanyBlock>
         <div className="company">  
+          <p id="stockid">{props.companyData[0].stock_code} | KOSPI</p> 
           <h1 id="stockname">{props.companyData[0].name}</h1> 
-          <p id="stockid">{props.companyData[0].stock_code}</p> 
           <div className="stock"> 
           <h1 id="stocktoday">{props.companyData[0].stock_today}</h1>
             <p id="diff">
               {props.companyData[0].ratio >= 0
                 ?  props.companyData[0].ratio
-                :  props.companyData[0].ratio}{"%"}
+                :  props.companyData[0].ratio}{" % "}
               | {props.companyData[0].diff}
               {" "}
             </p>
           </div>
         </div>
-        <div className="score_bar">
-          <img src="./scorebar.png"></img>
-          <p id="comment">투자에 적합한 점수입니다.</p>
+        <div className="scorebar">
+          <img src = {scorebar} id="bar"></img>
+          <img src = {choice} id="tri"></img>
+          <p id="comment" style={{textAlign: "center"}}>투자에 적합한 점수입니다.</p>
         </div>
         <div className="stockinfo">
           <div className="score">
