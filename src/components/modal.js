@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import "./modal.css";
+import { colors } from "@mui/material";
 
 Modal.setAppElement("#root"); // 모달이 화면에 렌더링될 DOM 요소를 설정
 
@@ -11,14 +12,15 @@ function ModalComponent(props) {
       backgroundColor: "#00000070"
     },
     content: {
-      width: "800px",
-      height: "800px",
+      width: "1200px",
+      height: "900px",
       inset: "unset",
       margin: "50vh auto",
       padding: 0,
       transform: "translateY(-50%)",
       position: "relative",
-      background: "#edede9",
+      background: "#282c34",
+      fontcolor : "white",
     },
   };
   return (
