@@ -2,9 +2,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
+    margin: 40px;
+    border-radius: 40px;
 }
 
 .modal-wrapper .title {
@@ -36,11 +35,9 @@
     margin-bottom: 20px;
 }
 
-.modal-wrapper .closeBtn {
-    height: 40px;
-    padding: 10px 40px;
-    margin: 10px auto 0;
-    margin-bottom: 20px;
-    display: block;
-    background-size: cover;
+button {
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background: none;
+    border: none;
 }

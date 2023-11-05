@@ -3,6 +3,76 @@ import styled from "styled-components";
 import scorebar from "./scorebar.png";
 import choice from "./choice.png";
 
+const CompanyBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-family: "Noto";
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #FFFFFF;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stockinfo {
+    display: flex;
+    flex-direction: row;
+    color: white;
+  }
+
+  .score {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stock {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stock #diff {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .stock #stocktoday {
+    color: white;
+  }
+
+  h1 #stockname {
+    font-size: 30px;
+    color: #343a40;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .stockinfo .stock {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .scorebar{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+  }
+
+  .scorebar #tri {
+    position: absolute;
+    left: 6%; //1번 
+    //left: 26%; //2번
+    //left: 45%; //3번
+    //left: 64.5%; //4번
+    //left: 84.5%; //5번
+    top: 27px;
+  }
+`;
 function Companyinfo(props) {
   function getTriMarginComment() {
     const triMargin = props.companyData[0].total_score;

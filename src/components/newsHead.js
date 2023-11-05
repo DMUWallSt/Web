@@ -17,12 +17,14 @@ function NewsHead(props) {
       height: 100px;
       object-fit: contain; /* 이미지가 비율을 유지하며 컨테이너에 맞게 축소됩니다. */
     }
+
     h1 {
       margin-left: 20px;
       font-weight: bold;
       font-size: 20px;
       
     }
+
     p {
       margin-left: 20px;
       font-size: 16px;
@@ -32,10 +34,12 @@ function NewsHead(props) {
       -webkit-line-clamp: 4;
       
     }
+    
     .content {
       display: flex;
       flex-direction: column;
     }
+
     .info {
       font-weight: bold;
       margin-left: 20px;
@@ -44,6 +48,7 @@ function NewsHead(props) {
       justify-content: space-between;
     }
   `;
+
   const ImgDiv = styled.div`
     width: 150px;
     height: 100px;
