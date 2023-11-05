@@ -18,32 +18,36 @@ function News(props) {
     // 페이지네이션을 포함한 박스
     display: flex;
     flex-direction: column;
-    
   `;
 
   const NotFoundBox = styled.div`
     text-align: center;
+<<<<<<< HEAD
     background-color: #0C1229;
     margin-top: 25%;
+=======
+    background-color: #0c1229;
+    margin-top: 33%;
+>>>>>>> 2368598df47e6bc3a35771fba63b6cd128ad2e1c
   `;
   const NotFoundBoxH1 = styled.h1`
     margin: 10px;
     color: white;
     font-family: "NOTO";
     padding: 5px;
-    
   `;
 
   const NotFoundBoxH3 = styled.h3`
+    display: flex;
     margin: 10px;
     color: white;
     font-family: "NOTO";
-    justify-contents: center;
+    justify-content: center;
   `;
 
   const GoBackButton = styled.button`
     text-align: center;
-    background-color: #0C1229;
+    background-color: #0c1229;
     border: 3px solid white;
     border-radius: 5px;
     width: 13vw;
@@ -87,6 +91,8 @@ function News(props) {
     console.log(value);
     setCurrentPage(value);
   };
+
+  console.log(props.companyData);
 
   const newsPerPage = 3;
   const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음
@@ -145,8 +151,9 @@ function News(props) {
                 justifyContent: "center",
               }}
             >
-              <Stack spacing={2}>
+              <Stack spacing={2} style={{ color: "white" }}>
                 <Pagination
+                  variant="outlined"
                   count={pageNumber}
                   page={currentPage}
                   color="primary"
@@ -164,9 +171,3 @@ function News(props) {
 }
 
 export default News;
-
-/*
-1. 삼성이라는 검색어를 get 요청에 넣어서 API 로 보냄
-2. 해당 API에서 해당 검색어와 일치하는 기업 데이터베이스를 찾고 해당 url로 redirect 시킴
-3. 기업 companyName 를 구하는 것이 아닌, 기업 이름으로 검색하는 방식도 생각해 봐야 함.(기업 이름 자체가 키가 되는 데이터베이스 필요)
-*/
