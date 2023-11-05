@@ -18,8 +18,8 @@ function ModalComponent(props) {
       left: "0",
     },
     content: {
-      width: "1600px",
-      height: "900px",
+      width: "1380px",
+      height: "720px",
       zIndex: "150",
       position: "absolute",
       top: "50%",
