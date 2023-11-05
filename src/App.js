@@ -1,9 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import News from "./routes/news";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import MyWordcloud from "./reactwordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
@@ -11,8 +11,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import searchImg from "./scr_icon.png";
-import Ranking from "./components/RankingComponent";
-import RankingComponent from "./components/RankingComponent";
+import RankingListComponent from "./components/RankingComponent";
 
 function App() {
   const navi = useNavigate();
@@ -37,13 +36,13 @@ function App() {
   `;
 
   const HeaderDiv = styled.div`
-    height: 6%;
+    height: 6vh;
     background-color: #111834;
     width: 100%;
   `;
 
   const ContentDiv = styled.div`
-    height: 94%;
+    height: 94vh;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -56,7 +55,7 @@ function App() {
   `;
   const SearchContainer = styled.div`
     display: flex;
-    height: 7%;
+    height: 7vh;
     margin-top: 5%;
     margin-left: 2%;
   `;
@@ -67,7 +66,7 @@ function App() {
   `;
 
   const SearchInput = styled.input`
-    width: 50%;
+    width: 53%;
     font-size: 18px;
     margin-right: 1%;
     margin-left: 1%; /* 검색 입력란과 버튼 사이 간격 */
@@ -88,7 +87,7 @@ function App() {
     margin-top: 1%;
     margin-bottom: 2%;
     width: 100%;
-    height: 1%;
+    height: 1vh;
     background: white;
   `;
 
@@ -135,21 +134,18 @@ function App() {
   `;
 
   const [tabState, setTabState] = useState("economy");
-  const [rankingData, setRankingData] = useState();
+  const [rankingData, setRankingData] = useState(null);
   const searchComp = useRef(null);
   const [rankingState, setRankingState] = useState("ratio");
+  const [isLoading, setIsLoading] = useState(true);
 
-  //1. 워드클라우드에서 데이터를 받아 표시해주는 형태
-  //2. 데이터를 useQuery로 실시간 업데이트 중
-  //3. ~~~~/ecomony 이렇게 되어 있으면 탭마다 고유의 값을 주고, 해당 탭을 클릭하면 props 로 전송된 setTab 함수를 실행시켜서  App.js 의 tab state를 변경시킴
-  //4. 그럼 useQuery([key], fetch(~~~/${tab}).then()~~ 이게 변경되면서 다른 워드클라우드가 나오게 된다.
-
-  console.log(rankingState);
   useEffect(() => {
+    setIsLoading(true);
     const response = axios
       .get(`http://localhost:3001/${rankingState}`)
       .then((res) => {
         setRankingData(res.data);
+        setIsLoading(false);
         console.log(res.data);
       })
       .catch((error) => {
@@ -157,37 +153,20 @@ function App() {
       });
   }, [rankingState]);
 
-  const { data: companyData, refetch } = useQuery(
-    ["key1"],
-    () => {
-      return axios.get(`http://localhost:3001/wordCloud`).then((res) => {
-        const Values = [30, 20, 10, 5, 30, 20, 10, 5];
+  useEffect(() => {});
+  const { data: companyData } = useQuery(["key1"], async () => {
+    return axios.get(`http://localhost:3001/wordCloud`).then((res) => {
+      const Values = [30, 20, 10, 5, 30, 20, 10, 5];
 
-        const wordCloudData = res.data.map((item, index) => ({
-          value: Values[index],
-          text: item.NAME,
-          url: "/news/" + item.NAME,
-          ratio: item.ratio,
-        }));
-        return wordCloudData;
-      });
-    },
-    {
-      onSuccess: () => {},
-    }
-  );
-
-  useEffect(() => {
-    refetch();
-  }, [tabState]);
-
-  useEffect(() => {
-    //메인 페이지에 접솔했을 때 처음 접속이면 빈 배열, 아니면 기존 배열 사용
-    const recentlyViewedData = sessionStorage.getItem("recentlyViewed");
-    if (!recentlyViewedData) {
-      sessionStorage.setItem("recentlyViewed", JSON.stringify([]));
-    }
-  }, []);
+      const wordCloudData = res.data.map((item, index) => ({
+        value: Values[index],
+        text: item.NAME,
+        url: "/news/" + item.NAME,
+        ratio: item.ratio,
+      }));
+      return wordCloudData;
+    });
+  });
 
   return (
     <BackGround>
@@ -200,6 +179,7 @@ function App() {
           </Container>
         </Navbar>
       </HeaderDiv>
+
       <ContentDiv>
         <Routes>
           <Route
@@ -238,7 +218,7 @@ function App() {
                 </SearchContainer>
                 <SearchLine />
                 {/*비동기로 인해 변수가 넘어오지 않았을 때 오류 방지*/}
-                {companyData && rankingData && (
+                {!isLoading && rankingData && companyData && (
                   <WordCloudAndRanking>
                     <WordCloudContainer>
                       <MyWordcloud
@@ -247,7 +227,7 @@ function App() {
                       />
                     </WordCloudContainer>
                     <Ranking>
-                      <RankingComponent
+                      <RankingListComponent
                         rankingData={rankingData}
                         rankingState={rankingState}
                       />
@@ -283,6 +263,7 @@ function App() {
               </div>
             }
           ></Route>
+
           <Route
             path="/news/:companyName"
             element={<News companyData={companyData} />}
@@ -292,4 +273,5 @@ function App() {
     </BackGround>
   );
 }
+
 export default App;
