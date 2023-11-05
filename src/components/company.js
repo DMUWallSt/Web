@@ -3,7 +3,6 @@ import styled from "styled-components";
 import scorebar from "./scorebar.png";
 import choice from "./choice.png";
 
-<<<<<<< HEAD
 const CompanyBlock = styled.div`
   display: flex;
   flex-direction: row;
@@ -74,9 +73,6 @@ const CompanyBlock = styled.div`
     top: 27px;
   }
 `;
-
-=======
->>>>>>> 2368598df47e6bc3a35771fba63b6cd128ad2e1c
 function Companyinfo(props) {
   function getTriMarginComment() {
     const triMargin = props.companyData[0].total_score;

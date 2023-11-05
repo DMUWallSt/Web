@@ -7,22 +7,6 @@ Modal.setAppElement("#root"); // 모달이 화면에 렌더링될 DOM 요소를 
 
 function ModalComponent(props) {
 
- 
-//  const Line = props.content.split('.').map((sentence, index, array) => {
-//   const hasDotAndNumber = /(\d+(\.\d+)?\%)|(\d+\.\d+)/.test(sentence);
-  
-//   return (
-//     <span key={index}>
-//       {sentence.trim()}
-//       {index !== array.length - 1 && !hasDotAndNumber && (
-//         <>
-//           .<br /><br />
-//         </>
-//       )}
-//     </span>
-//   );
-// });
-
   const customStyles = {
     overlay: {
       backgroundColor: " rgba(0, 0, 0, 0.4)",

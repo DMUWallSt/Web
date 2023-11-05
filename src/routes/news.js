@@ -22,13 +22,8 @@ function News(props) {
 
   const NotFoundBox = styled.div`
     text-align: center;
-<<<<<<< HEAD
     background-color: #0C1229;
     margin-top: 25%;
-=======
-    background-color: #0c1229;
-    margin-top: 33%;
->>>>>>> 2368598df47e6bc3a35771fba63b6cd128ad2e1c
   `;
   const NotFoundBoxH1 = styled.h1`
     margin: 10px;
