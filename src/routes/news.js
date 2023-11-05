@@ -22,7 +22,7 @@ function News(props) {
 
   const NotFoundBox = styled.div`
     text-align: center;
-    background-color: #0C1229;
+    background-color: #0c1229;
     margin-top: 25%;
   `;
   const NotFoundBoxH1 = styled.h1`
@@ -68,7 +68,6 @@ function News(props) {
           throw new Error("에러");
         }
         setDataSuccess(true);
-        console.log(response.data);
         setLoading(false);
         setNewsData(response.data.news);
         setCorpData(response.data.company);
@@ -83,11 +82,8 @@ function News(props) {
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
 
   const handleChange = (e, value) => {
-    console.log(value);
     setCurrentPage(value);
   };
-
-  console.log(props.companyData);
 
   const newsPerPage = 3;
   const currentPageLast = currentPage * newsPerPage; // 현재 페이지의 처음

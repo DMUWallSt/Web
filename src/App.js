@@ -17,7 +17,6 @@ function App() {
   const navi = useNavigate();
 
   const search = (corpName) => {
-    console.log(corpName);
     navi(`/news/${corpName}`);
   };
 
@@ -146,7 +145,6 @@ function App() {
       .then((res) => {
         setRankingData(res.data);
         setIsLoading(false);
-        console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
