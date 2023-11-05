@@ -16,10 +16,10 @@ function Companyinfo(props) {
       return "해당 종목에 투자를 다시 고려해보세요.";
     }
     if (triMargin >= 20) {
-      return "해당 종목에 투자는 권장하지 않습니다. ";
+      return "해당 종목에 투자는 권장하지 않습니다.";
     }
     if (triMargin >= 0) {
-      return "해당 종목에 투자는 매우 위험합니다. ";
+      return "해당 종목에 투자는 매우 위험합니다.";
     }
   }
 
@@ -106,6 +106,15 @@ function Companyinfo(props) {
     }
   `;
 
+  function ratioColor() {
+    if (props.companyData[0].ratio <= 0) {
+      return "blue";
+    }
+    if (props.companyData[0].ratio > 0) {
+      return "red";
+    }
+  }
+
   return (
     props.companyData && (
       <CompanyBlock>
@@ -113,18 +122,28 @@ function Companyinfo(props) {
           <p id="stockid">{props.companyData[0].stock_code} | KOSPI</p>
           <h1 id="stockname">{props.companyData[0].name}</h1>
           <div className="stock">
-            <h1 id="stocktoday">{props.companyData[0].stock_today}</h1>
-            <p id="diff">
+            <h1 id="stocktoday" style={{ color: ratioColor() }}>
+              {props.companyData[0].stock_today}
+            </h1>
+            <p id="diff" style={{ color: ratioColor() }}>
               {props.companyData[0].ratio >= 0
-                ? props.companyData[0].ratio
-                : props.companyData[0].ratio}
-              {" % "}| {props.companyData[0].diff}{" "}
+                ? "▲ " + props.companyData[0].ratio
+                : "▼ " + props.companyData[0].ratio}
+              {" % "}
+              <span style={{ color: "white" }}>|</span>{" "}
+              {props.companyData[0].ratio >= 0
+                ? " ▲ " + props.companyData[0].diff
+                : " ▼ " + props.companyData[0].diff}{" "}
             </p>
           </div>
         </div>
         <div className="scorebar" style={{ position: "absolute" }}>
           <img src={scorebar} id="bar" style={{ left: getTriMargin() }}></img>
-          <img src={choice} id="tri"></img>
+          <img
+            src={choice}
+            id="tri"
+            style={{ position: "absolute", left: getTriMargin(), top: "29%" }}
+          ></img>
           <p id="comment" style={{ textAlign: "center" }}>
             {getTriMarginComment()}
           </p>
