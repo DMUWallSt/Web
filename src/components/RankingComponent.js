@@ -8,7 +8,7 @@ const RankingHr = styled.div`
   background: white;
 `;
 
-function RankingComponent(props) {
+function RankingListComponent(props) {
   if (props.rankingState === "ratio") {
     return (
       <div>
@@ -95,4 +95,4 @@ function RankingComponent(props) {
   }
 }
 
-export default RankingComponent;
+export default RankingListComponent;
