@@ -58,9 +58,9 @@ const CompanyBlock = styled.div`
 
   .scorebar{
     position: absolute;
-    top: 50%; /* 세로 중앙 정렬을 위해 화면 상단에서 50% 위치로 이동 */
-    left: 50%; /* 가로 중앙 정렬을 위해 화면 왼쪽에서 50% 위치로 이동 */
-    transform: translate(-50%, -50%); /* 요소의 중심을 기준으로 이동하여 정확한 가운데 정렬 */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
   }
 
   .scorebar #tri {
