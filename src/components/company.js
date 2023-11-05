@@ -56,14 +56,21 @@ const CompanyBlock = styled.div`
     justify-content: center;
   }
 
+  .scorebar{
+    position: absolute;
+    top: 50%; /* 세로 중앙 정렬을 위해 화면 상단에서 50% 위치로 이동 */
+    left: 50%; /* 가로 중앙 정렬을 위해 화면 왼쪽에서 50% 위치로 이동 */
+    transform: translate(-50%, -50%); /* 요소의 중심을 기준으로 이동하여 정확한 가운데 정렬 */
+  }
+
   .scorebar #tri {
     position: absolute;
-    left: 39.7%; //1번 
-    //left: 45.2%; //2번
-    //left: 50.9%; //3번
-    //left: 56.6%; //4번
-    //left: 62.3%; //5번
-    top: 56px;
+    left: 6%; //1번 
+    //left: 26%; //2번
+    //left: 45%; //3번
+    //left: 64.5%; //4번
+    //left: 84.5%; //5번
+    top: 27px;
   }
 `;
 

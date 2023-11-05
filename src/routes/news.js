@@ -24,7 +24,7 @@ function News(props) {
   const NotFoundBox = styled.div`
     text-align: center;
     background-color: #0C1229;
-    margin-top: 40%;
+    margin-top: 33%;
   `;
   const NotFoundBoxH1 = styled.h1`
     margin: 10px;
@@ -44,9 +44,9 @@ function News(props) {
   const GoBackButton = styled.button`
     text-align: center;
     background-color: #0C1229;
+    border: 3px solid white;
     border-radius: 5px;
     width: 13vw;
-    border: none;
   `;
 
   const [newsData, setNewsData] = useState([]);
