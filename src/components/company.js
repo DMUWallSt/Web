@@ -220,7 +220,7 @@ function Companyinfo(props) {
         </div>
         <div className="stockinfo">
           <div className="score">
-            <h3>재무점수 | {props.companyData[0].finance_score} / 10</h3>
+            <h3>재무점수 | {props.companyData[0].finance_score} / 30</h3>
             <h3>최근점수 | {props.companyData[0].recen_score} / 100 </h3>
             <h3>총 점수 | {props.companyData[0].total_score} / 100</h3>
           </div>
