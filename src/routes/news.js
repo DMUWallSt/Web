@@ -142,15 +142,15 @@ function News(props) {
                 justifyContent: "center",
               }}
             >
-              <Stack spacing={2} style={{ color: "white" }}>
+              <Stack spacing={2}>
                 <Pagination
-                  variant="outlined"
                   count={pageNumber}
                   page={currentPage}
                   color="primary"
                   showFirstButton
                   showLastButton
                   onChange={handleChange}
+                  style={{ color: "white" }}
                 />
               </Stack>
             </div>
