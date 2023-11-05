@@ -9,7 +9,7 @@ const CompanyBlock = styled.div`
   font-family: "Noto";
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #FFFFFF;
+  border-bottom: 3px solid #ffffff;
 
   .title {
     display: flex;
@@ -39,7 +39,7 @@ const CompanyBlock = styled.div`
     text-align: center;
     justify-content: center;
   }
-  
+
   .stock #stocktoday {
     color: white;
   }
@@ -56,16 +56,16 @@ const CompanyBlock = styled.div`
     justify-content: center;
   }
 
-  .scorebar{
+  .scorebar {
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
   }
 
   .scorebar #tri {
     position: absolute;
-    left: 6%; //1번 
+    left: 6%; //1번
     //left: 26%; //2번
     //left: 45%; //3번
     //left: 64.5%; //4번
@@ -220,9 +220,9 @@ function Companyinfo(props) {
         </div>
         <div className="stockinfo">
           <div className="score">
-            <h3>재무점수 | {props.companyData[0].finance_score}</h3>
-            <h3>최근점수 | {props.companyData[0].recen_score}</h3>
-            <h3>총 점수 | {props.companyData[0].total_score}</h3>
+            <h3>재무점수 | {props.companyData[0].finance_score} / 10</h3>
+            <h3>최근점수 | {props.companyData[0].recen_score} / 100 </h3>
+            <h3>총 점수 | {props.companyData[0].total_score} / 100</h3>
           </div>
         </div>
       </CompanyBlock>
