@@ -1,11 +1,9 @@
 import ReactWordcloud from "react-wordcloud";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import RecentlyVisitedCompanies from "./components/RecentlyViewedCompanies";
-import TabLayout from "./components/tabLayout";
 
+//워드클라우드 컴포넌트
 function MyWordcloud(props) {
-  console.log(props);
   const WordCloudDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -15,9 +13,8 @@ function MyWordcloud(props) {
   const size = [790, 500];
   const navi = useNavigate();
   let words = props.words;
-  console.log(words);
   const callbacks = {
-    getWordColor: (word) => (word.ratio > 0 ? "red" : "blue"),
+    getWordColor: (word) => (word.ratio > 0 ? "#F35A97" : "#10DE9E"),
     onWordClick: (word) => navi(word.url),
     getWordTooltip: (word) => `${word.value}`,
   };
@@ -31,8 +28,6 @@ function MyWordcloud(props) {
 
   return (
     <WordCloudDiv>
-      {/*<TabLayout setTabState={props.setTabState} refetch={props.refetch} />*/}
-
       <ReactWordcloud
         callbacks={callbacks}
         options={options}
@@ -45,7 +40,6 @@ function MyWordcloud(props) {
           justifyContent: "center",
         }}
       />
-      {/*<RecentlyVisitedCompanies companyData={props.words} />*/}
     </WordCloudDiv>
   );
 }

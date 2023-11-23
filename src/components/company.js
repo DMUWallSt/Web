@@ -3,6 +3,7 @@ import styled from "styled-components";
 import scorebar from "./scorebar.png";
 import choice from "./choice.png";
 
+//기업 정보 컴포넌트
 const CompanyBlock = styled.div`
   display: flex;
   flex-direction: row;
@@ -73,6 +74,7 @@ const CompanyBlock = styled.div`
     top: 27px;
   }
 `;
+
 function Companyinfo(props) {
   function getTriMarginComment() {
     const triMargin = props.companyData[0].total_score;
@@ -178,10 +180,10 @@ function Companyinfo(props) {
 
   function ratioColor() {
     if (props.companyData[0].ratio <= 0) {
-      return "blue";
+      return "#10DE9E";
     }
     if (props.companyData[0].ratio > 0) {
-      return "red";
+      return "#F35A97";
     }
   }
 
@@ -221,7 +223,7 @@ function Companyinfo(props) {
         <div className="stockinfo">
           <div className="score">
             <h3>재무점수 | {props.companyData[0].finance_score} / 30</h3>
-            <h3>최근점수 | {props.companyData[0].recen_score} / 100 </h3>
+            <h3>최근점수 | {props.companyData[0].recen_score} / 35 </h3>
             <h3>총 점수 | {props.companyData[0].total_score} / 100</h3>
           </div>
         </div>

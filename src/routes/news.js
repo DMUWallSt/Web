@@ -9,6 +9,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import styled from "styled-components";
 
+//전체 뉴스 컴포넌트
 function News(props) {
   const { companyName } = useParams();
 
@@ -63,7 +64,6 @@ function News(props) {
         const response = await axios.get(
           `http://localhost:3001/news/${companyName}`
         );
-        //const response = await axios.get(`http://localhost:3001/news/${companyName}`);
         if (response.data.news.length === 0) {
           throw new Error("에러");
         }

@@ -8,6 +8,7 @@ const RankingHr = styled.div`
   background: white;
 `;
 
+//메인 페이지의 랭킹 컴포넌트
 function RankingListComponent(props) {
   if (props.rankingState === "ratio") {
     return (
@@ -19,10 +20,10 @@ function RankingListComponent(props) {
             <tr>
               <td>{n.NAME}</td>
               <td>{n.stock_today} ₩</td>
-              <td style={{ color: n.diff < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.diff < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.diff < 0 ? "▼ " + n.diff : "▲ " + n.diff}
               </td>
-              <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.ratio < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>
             </tr>
@@ -41,10 +42,10 @@ function RankingListComponent(props) {
             <tr>
               <td>{n.NAME}</td>
               <td>{n.stock_today} ₩</td>
-              <td style={{ color: n.diff < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.diff < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.diff < 0 ? "▼ " + n.diff : "▲ " + n.diff}
               </td>
-              <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.ratio < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>
             </tr>
@@ -64,7 +65,7 @@ function RankingListComponent(props) {
               <td>{n.NAME}</td>
               <td>{n.market_cap} 억</td>
               <td>{n.stock_today} </td>
-              <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.ratio < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>
             </tr>
@@ -84,7 +85,7 @@ function RankingListComponent(props) {
               <td>{n.NAME}</td>
               <td>{n.trading_vol} 개</td>
               <td>{n.stock_today} ₩</td>
-              <td style={{ color: n.ratio < 0 ? "blue" : "red" }}>
+              <td style={{ color: n.ratio < 0 ? "#10DE9E" : "#F35A97" }}>
                 {n.ratio < 0 ? "▼ " + n.ratio : "▲ " + n.ratio} %
               </td>
             </tr>

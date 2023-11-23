@@ -5,8 +5,8 @@ import exitbtn from "./exit.png";
 
 Modal.setAppElement("#root"); // 모달이 화면에 렌더링될 DOM 요소를 설정
 
+//뉴스 클릭 시 나오는 모달 창 컴포넌트
 function ModalComponent(props) {
-
   const customStyles = {
     overlay: {
       backgroundColor: " rgba(0, 0, 0, 0.4)",
@@ -31,7 +31,7 @@ function ModalComponent(props) {
       justifyContent: "center",
       overflow: "auto",
       borderRadius: "40px",
-      backgroundColor: "#e8e3e3"
+      backgroundColor: "#e8e3e3",
     },
   };
   return (

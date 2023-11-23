@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import searchImg from "./scr_icon.png";
 import RankingListComponent from "./components/RankingComponent";
 
+//메인 페이지 컴포넌트
 function App() {
   const navi = useNavigate();
 

@@ -8,7 +8,6 @@ const BoxBlock = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  
 `;
 
 function BoxTemplate({ children }) {
